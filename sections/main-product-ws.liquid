@@ -421,7 +421,10 @@
                   </button>
                 </quantity-input>
               </div>
-              <div>kjlkjlkjlkjlkjlkjljl</div>
+              {% for sty in shop.metaobjects.ws_child %}
+                <div>{sty.sku}</div>
+              {% endfor %}
+
               <div class="ws_custom_info_1">
                 <div class="custom_input_title">Replace "to our wedding"</div>
                 <div class="custom_input_subtitle">
