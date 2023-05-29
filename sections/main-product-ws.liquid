@@ -423,7 +423,8 @@
               </div>
               
               {% for sty in product.metafields.custom.wsstyle %}
-                { sty }
+                {{ sty }}  
+                {{ sty.event }}  
               {% endfor %}
               {{product.metafields.custom.wsstyle}}
 
