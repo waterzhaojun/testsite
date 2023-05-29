@@ -422,8 +422,8 @@
                 </quantity-input>
               </div>
               
-              {% for sty in product.metafields.custom.style %}
-                {{ sty.value }}
+              {% for sty in product.metafields.custom.style.values %}
+                {{ sty.sku.value }}
               {% endfor %}
               {{product.metafields.custom.style}}
 
