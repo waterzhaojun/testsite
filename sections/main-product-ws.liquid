@@ -421,7 +421,10 @@
                   </button>
                 </quantity-input>
               </div>
-
+              
+              {% for sty in product.metafields.custom.style %}
+                {{ sty.name }}
+              {% endfor %}
               {{product.metafields.custom.style}}
 
               <div class="ws_custom_info_1">
