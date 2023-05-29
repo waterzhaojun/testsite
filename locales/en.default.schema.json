@@ -1887,13 +1887,13 @@
       "name": "Product information",
       "blocks": {
         "custom_product_option": {
-          "name": "fCustom product option",
+          "name": "Custom product option",
           "settings": {
             "title": {
-              "label": "ffTitle"
+              "label": "Title"
             },
             "values": {
-              "label": "ffOption values"
+              "label": "Option values"
             }
           }
         },
