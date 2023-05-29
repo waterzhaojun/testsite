@@ -421,8 +421,9 @@
                   </button>
                 </quantity-input>
               </div>
-              {% for sty in shop.metaobjects.ws_child %}
-                <div>{sty.sku}</div>
+
+              {% for sty in product.metafields.style.value %}
+                <div>{sty.style}</div>
               {% endfor %}
 
               <div class="ws_custom_info_1">
