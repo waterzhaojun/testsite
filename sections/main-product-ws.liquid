@@ -422,7 +422,7 @@
                 </quantity-input>
               </div>
               
-              {% for sty in product.metafields.ws_style %}
+              {% for sty in product.metafields.custom.wsstyle %}
                 {{ sty }}  
                 {{ sty.event }}  
               {% endfor %}
