@@ -422,10 +422,10 @@
                 </quantity-input>
               </div>
               
-              {% for sty in product.metafields.custom.style %}
+              {% for sty in product.metafields.custom.wsstyle %}
                 {{ sty.sku.value }}
               {% endfor %}
-              {{product.metafields.custom.style}}
+              {{product.metafields.custom.wsstyle}}
 
               <div class="ws_custom_info_1">
                 <div class="custom_input_title">Replace "to our wedding"</div>
