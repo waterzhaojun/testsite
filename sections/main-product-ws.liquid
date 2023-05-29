@@ -318,6 +318,39 @@
 
         {%- for block in section.blocks -%}
           {%- case block.type -%}
+            {% when "custom_product_option" %}
+            
+              {% if block.settings.values != blank %}
+              
+              {% assign line_item_property_enable = true %} 
+              
+              {% if block.settings.title != blank %}
+                  {% assign custom_product_option_title = block.settings.title  %}
+              {% endif %}	
+                  
+              {% assign custom_product_options = block.settings.values | strip_html | split: "," %}
+                  
+              <fieldset id="ProductOption-{{custom_product_option_title | handleize }}" class="product-form__input">
+                <legend class="form__label">{{ custom_product_option_title }}</legend>
+                {% for option in custom_product_options %}
+                    <input type="radio"
+                      id="{{ custom_product_option_title | handleize }}-{{ option | strip }}"
+                      name="{{ custom_product_option_title | handleize }}"
+                      value="{{ option | strip }}"
+                      {% if forloop.first %}checked{%endif %}
+                      >
+                    <label for="{{ custom_product_option_title | handleize }}-{{ option | strip }}">
+                      {{ option | strip }}
+                    </label>
+                {% endfor %}
+              </fieldset>
+          
+              <script>
+                let radioInputs = document.querySelectorAll('input[type=radio][name="{{ custom_product_option_title | handleize }}"]');
+                radioInputs.forEach(radio => radio.addEventListener('change', () => document.querySelector('#CustomProductOptionProperty').value = radio.value));
+              </script>
+              {% endif %}
+
             {%- when '@app' -%}
               {% render block %}
             {%- when 'text' -%}
@@ -714,6 +747,9 @@
                     novalidate: 'novalidate',
                     data-type: 'add-to-cart-form'
                   -%}
+                    {% if line_item_property_enable %}
+                      <input type="hidden" id="CustomProductOptionProperty" name="properties[{{ custom_product_option_title }}]" value="{{ custom_product_options | first | strip }} ">
+                    {% endif %}
                     <input
                       type="hidden"
                       name="id"
@@ -1457,7 +1493,24 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    }
+    },
+    {
+      "type": "custom_product_option",
+      "name": "t:sections.main-product.blocks.custom_product_option.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.main-product.blocks.custom_product_option.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "values",
+          "label": "t:sections.main-product.blocks.custom_product_option.settings.values.label"
+        }
+      ]
+    },
   ]
 }
 {% endschema %}
