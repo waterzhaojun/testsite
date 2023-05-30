@@ -11,7 +11,10 @@
                     "type": "text",
                     "settings": {}
                 }
-            }
+            },
+            "block_order": [
+                "title"
+            ]
         },
         "main2": {
             "type": "test-section",
