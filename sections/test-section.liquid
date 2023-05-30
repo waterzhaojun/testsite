@@ -1,7 +1,4 @@
 <section>
-    <h2>
-    {{ section.settings.title }}
-    </h2>
   {%- for block in section.blocks -%}
     {% case block.type %}
       {%- when 'title' -%}
