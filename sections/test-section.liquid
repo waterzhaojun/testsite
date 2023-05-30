@@ -1,12 +1,13 @@
 <section>
-  <div>{{ product.title}}</div>
+  <div>{{ product.title }}</div>
   <div>{{ product.description }}</div>
   {%- for block in section.blocks -%}
     {% case block.type %}
       {%- when 'title' -%}
-      <h2>{{ product.title}}</h2>
+      <h2>{{ product.title }}</h2>
       {%- when 'description' -%}
       <div>{{ product.description }}</div>
+    {%- endcase -%}
   {% endfor %}
   kjghkjhkjhk
 </section>
