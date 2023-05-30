@@ -13,11 +13,18 @@
           "type": "description",
           "settings": {
           }
+        },
+        "acfa7e4c-ce2e-480d-8b68-4555c018267b": {
+          "type": "title",
+          "settings": {
+            "section-title": "sfsfsfsfsfsfsf"
+          }
         }
       },
       "block_order": [
         "8f5d33c9-6a0c-49c3-89b5-63b145074dcc",
-        "b682a2f7-9782-440d-b6c7-cd909c3c714f"
+        "b682a2f7-9782-440d-b6c7-cd909c3c714f",
+        "acfa7e4c-ce2e-480d-8b68-4555c018267b"
       ],
       "settings": {
         "title": "awa"
