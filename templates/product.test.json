@@ -2,10 +2,16 @@
     "name": "test product template",
     "sections": {
         "main1": {
-            "type": "test-section"
+            "type": "test-section",
+            "settings": {
+                "title": "asdfdfdf",
+            }
         },
         "main2": {
-            "type": "test-section"
+            "type": "test-section",
+            "settings": {
+                "title": "asdfdfdf",
+            }
         }
     },
     "order": [
