@@ -3,7 +3,7 @@
     {{ section.settings.title }}
   </div>
   {%- for block in section.blocks -%}
-    <div>{{ block.settings.image }}
+    <div>{{ block.settings.image.label }}
     </div>
     <div>{ block.name }
     </div>
@@ -28,9 +28,9 @@
         "type": "slide",
         "settings": [
           {
-            "type": "image_picker",
+            "type": "text",
             "id": "image",
-            "label": "Image"
+            "label": "Image label"
           }
         ]
       }
