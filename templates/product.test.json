@@ -1,20 +1,10 @@
 {
-    "name": "test product template",
     "sections": {
         "main1": {
             "type": "test-section",
             "settings": {
                 "title": "awa"
-            },
-            "blocks": {
-                "title": {
-                    "type": "text",
-                    "settings": {}
-                }
-            },
-            "block_order": [
-                "title"
-            ]
+            }
         },
         "main2": {
             "type": "test-section",
