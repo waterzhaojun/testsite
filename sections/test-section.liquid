@@ -3,6 +3,7 @@
     {% case block.type %}
       {%- when 'title' -%}
       <h2>{{ product.title }}</h2>
+      <h4>{{ block.settings.section-title }}</h4>
       {%- when 'description' -%}
       <div>{{ product.description }}</div>
     {% endcase %}
