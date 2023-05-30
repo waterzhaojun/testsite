@@ -1,6 +1,6 @@
 <section>
-  {{ product.title}}
-  {{ product.description }}
+  <div>{{ product.title}}</div>
+  <div>{{ product.description }}</div>
   {%- for block in section.blocks -%}
     {% case block.type %}
       {%- when 'title' -%}
