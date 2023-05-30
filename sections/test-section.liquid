@@ -2,6 +2,9 @@
   <div>
     {{ section.settings.title }}
   </div>
+  {%- for block in section.blocks -%}
+    {{ block.name }}
+  {% endfor %}
 </section>
 
 {% schema %}
