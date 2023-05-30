@@ -1,4 +1,6 @@
 <section>
+  {{ product.title}}
+  {{ product.description }}
   {%- for block in section.blocks -%}
     {% case block.type %}
       {%- when 'title' -%}
