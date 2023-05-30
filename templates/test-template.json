@@ -1,0 +1,11 @@
+{
+    "name": "test product template",
+    "sections": {
+        "main1": {
+            "type": "test-section"
+        }
+    },
+    "order": [
+        "main1"
+    ]
+}
