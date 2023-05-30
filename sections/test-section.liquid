@@ -1,14 +1,13 @@
 <section>
-  <div>
-    <h2>{{ product.title }}</h2>
+    <h2>
     {{ section.settings.title }}
-  </div>
+    </h2>
   {%- for block in section.blocks -%}
     {% case block.type %}
       {%- when 'title' -%}
-      {% render block %}
+      <h2>{{ product.title}}</h2>
       {%- when 'description' -%}
-      {% render block %}
+      <div>{{ product.description }}</div>
   {% endfor %}
 </section>
 
