@@ -5,6 +5,12 @@
             "type": "test-section",
             "settings": {
                 "title": "awa"
+            },
+            "blocks": {
+                "title": {
+                    "type": "text",
+                    "settings": {}
+                }
             }
         },
         "main2": {
