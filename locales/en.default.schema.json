@@ -1886,8 +1886,8 @@
     "main-product": {
       "name": "Product information",
       "blocks": {
-        "custom_product_option": {
-          "name": "Custom product option",
+        "product_style_option": {
+          "name": "product style options",
           "settings": {
             "title": {
               "label": "Title"
