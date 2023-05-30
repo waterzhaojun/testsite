@@ -22,6 +22,9 @@
     ],
     "blocks": [
       {
+        "type": "@app"
+      },
+      {
         "name": "Section title",
         "type": "title",
         "settings": [
@@ -31,10 +34,12 @@
             "label": "Set section title"
           }
         ]
-      }, {
+      },
+      {
         "name": "Description",
         "type": "description"
-      }, {
+      },
+      {
         "name": "img",
         "type": "slide",
         "settings": [
@@ -42,6 +47,16 @@
             "type": "text",
             "id": "image",
             "label": "Image label"
+          }
+        ]
+      }, {
+        "name": "image pick",
+        "type": "imagepick",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "imagep",
+            "label": "Image"
           }
         ]
       }
