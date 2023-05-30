@@ -1,20 +1,37 @@
 {
-    "sections": {
-        "main1": {
-            "type": "test-section",
-            "settings": {
-                "title": "awa"
-            }
+  "sections": {
+    "main1": {
+      "type": "test-section",
+      "blocks": {
+        "8f5d33c9-6a0c-49c3-89b5-63b145074dcc": {
+          "type": "title",
+          "settings": {
+            "section-title": "sdfsdfsfsfsf"
+          }
         },
-        "main2": {
-            "type": "test-section",
-            "settings": {
-                "title": "nnnnnn"
-            }
+        "b682a2f7-9782-440d-b6c7-cd909c3c714f": {
+          "type": "description",
+          "settings": {
+          }
         }
+      },
+      "block_order": [
+        "8f5d33c9-6a0c-49c3-89b5-63b145074dcc",
+        "b682a2f7-9782-440d-b6c7-cd909c3c714f"
+      ],
+      "settings": {
+        "title": "awa"
+      }
     },
-    "order": [
-        "main1",
-        "main2"
-    ]
+    "main2": {
+      "type": "test-section",
+      "settings": {
+        "title": "nnnnnn"
+      }
+    }
+  },
+  "order": [
+    "main1",
+    "main2"
+  ]
 }
