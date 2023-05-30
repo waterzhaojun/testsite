@@ -1,21 +1,20 @@
 {
-    "name": "test product template",
-    "sections": {
-        "main1": {
-            "type": "test-section",
-            "settings": {
-                "title": "awa"
-            }
-        },
-        "main2": {
-            "type": "test-section",
-            "settings": {
-                "title": "nnnnnn"
-            }
-        }
+  "sections": {
+    "main1": {
+      "type": "test-section",
+      "settings": {
+        "title": "awa"
+      }
     },
-    "order": [
-        "main1",
-        "main2"
-    ]
+    "main2": {
+      "type": "test-section",
+      "settings": {
+        "title": "nnnnnn"
+      }
+    }
+  },
+  "order": [
+    "main1",
+    "main2"
+  ]
 }

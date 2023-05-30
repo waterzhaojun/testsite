@@ -1,42 +1,58 @@
 <section>
-  <div>{{ product.title}}</div>
-  <div>{{ product.description }}</div>
+  <div>
+    <h2>{{ product.title }}</h2>
+    {{ section.settings.title }}
+  </div>
   {%- for block in section.blocks -%}
-    {% case block.type %}
-      {%- when 'title' -%}
-      <h2>{{ product.title}}</h2>
-      {%- when 'description' -%}
-      <div>{{ product.description }}</div>
+    <div>{{ block.settings.image }}</div>
+    <div>{ block.name }</div>
+    {{ block.name }}
   {% endfor %}
-  kjghkjhkjhk
 </section>
 
 {% schema %}
-  {
-    "name": "Test Section",
-    "settings": [
-      {
-        "id": "title",
-        "type": "text",
-        "label": "test section id",
-        "default": "TtTTT"
-      }
-    ],
-    "blocks": [
-      {
-        "name": "Section title",
-        "type": "title",
-        "settings": [
-          {
-            "type": "text",
-            "id": "section-title",
-            "label": "Set section title"
-          }
-        ]
-      }, {
-        "name": "Description",
-        "type": "description"
-      }
-    ]
-  }
+{
+  "name": "Test Section",
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "test section id",
+      "default": "TtTTT"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Section title",
+      "type": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "section-title",
+          "label": "Set section title"
+        }
+      ]
+    }, {
+      "name": "Description",
+      "type": "description"
+    },
+    {
+      "name": "img",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "image",
+          "label": "Image label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "test aaa section",
+      "category": "Custom"
+    }
+  ]
+}
 {% endschema %}
