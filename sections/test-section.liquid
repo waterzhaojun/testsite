@@ -4,11 +4,11 @@
     {{ section.settings.title }}
   </div>
   {%- for block in section.blocks -%}
-    <div>{{ block.settings.image }}
-    </div>
-    <div>{ block.name }
-    </div>
-    {{ block.name }}
+    {% case block.type %}
+      {%- when 'title' -%}
+      {% render block %}
+      {%- when 'description' -%}
+      {% render block %}
   {% endfor %}
 </section>
 
@@ -25,21 +25,11 @@
     ],
     "blocks": [
       {
-        "name": "img",
-        "type": "slide",
-        "settings": [
-          {
-            "type": "text",
-            "id": "image",
-            "label": "Image label"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "test aaa section",
-        "category": "Custom"
+        "name": "Section title",
+        "type": "title"
+      }, {
+        "name": "Description",
+        "type": "description"
       }
     ]
   }
