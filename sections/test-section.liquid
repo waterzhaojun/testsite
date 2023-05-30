@@ -3,6 +3,10 @@
     {{ section.settings.title }}
   </div>
   {%- for block in section.blocks -%}
+    <div>{{ block.name }}
+    </div>
+    <div>{ block.name }
+    </div>
     {{ block.name }}
   {% endfor %}
 </section>
