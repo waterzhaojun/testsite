@@ -3,9 +3,13 @@
     "sections": {
         "main1": {
             "type": "test-section"
+        },
+        "main2": {
+            "type": "test-section"
         }
     },
     "order": [
-        "main1"
+        "main1",
+        "main2"
     ]
 }
