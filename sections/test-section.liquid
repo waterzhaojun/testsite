@@ -1,6 +1,8 @@
-<div>
-  {{ section.settings.title }}
-</div>
+<section>
+  <div>
+    {{ section.settings.title }}
+  </div>
+</section>
 
 {% schema %}
   {
@@ -11,6 +13,12 @@
         "type": "text",
         "label": "test section id",
         "default": "TtTTT"
+      }
+    ],
+    "presets": [
+      {
+        "name": "test aaa section",
+        "category": "Custom"
       }
     ]
   }
