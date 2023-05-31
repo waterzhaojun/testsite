@@ -14,9 +14,9 @@
           {{ main_image | image_url: width: 300 | image_tag }}
           <input
             type="radio"
-            id="{{ custom_product_option_title | handleize }}-{{ option | strip }}"
-            name="{{ custom_product_option_title | handleize }}"
-            value="{{ option | strip }}"
+            id="{{ sty.sku }}"
+            name="{{ sty.sku }}"
+            value="{{ sty.sku }}"
             {% if forloop.first %}
               checked
             {% endif %}
