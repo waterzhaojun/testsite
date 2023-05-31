@@ -7,6 +7,10 @@
       {% when 'description' %}
         <div>{{ product.description }}</div>
       {% when 'product_style_option' %}
+        {% assign styles = product.metafields.custom.wsstyle %}
+        {% for sty in styles %}
+          {{ sty }}
+        {% endfor %}
         {{ product.metafields.custom.singimg.value.sku }}
         {{ product.metafields.custom.wsstyle }}
         <div>========</div>
