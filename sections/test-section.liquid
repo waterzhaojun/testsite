@@ -11,15 +11,8 @@
         {% for sty in styles %}
           {% assign main_image = sty.images[0] %}
           {{ main_image }}
-          {{ main_image | image_url: width: 200 }}
         {% endfor %}
-        {{ product.metafields.custom.singimg.value.sku }}
-        {{ product.metafields.custom.wsstyle }}
-        <div>========</div>
-        {{ product.metafields.custom.wsstyle.values }}
-        {% for sty in product.metafields.custom.wsstyle %}
-          <div>aa</div>
-        {% endfor %}
+
         {% if block.settings.values != blank %}
           {% assign line_item_property_enable = true %}
 
