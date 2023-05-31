@@ -11,7 +11,7 @@
         {{ product.metafields.custom.wsstyle }}
         <div>========</div>
         {{ product.metafields.custom.wsstyle.values }}
-        {% for sty in product.metafields.custom.wsstyle.key %}
+        {% for sty in product.metafields.custom.wsstyle %}
           <div>aa</div>
         {% endfor %}
         {% if block.settings.values != blank %}
