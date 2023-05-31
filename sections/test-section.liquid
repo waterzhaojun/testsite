@@ -8,7 +8,7 @@
         <div>{{ product.description }}</div>
       {% when 'product_style_option' %}
         {{ product.metafields.custom.singimg.value.sku }}
-        {{ product.metafields.custom.wsstyle }}
+        {{ product.metafields.custom.wsstyle.values }}
         {% for sty in product.metafields.custom.wsstyle %}
           <div>aa</div>
         {% endfor %}
