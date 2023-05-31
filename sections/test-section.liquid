@@ -10,6 +10,7 @@
         {% assign styles = product.metafields.custom.wsstyle.value %}
         {% for sty in styles %}
           {% assign main_image = sty.images[0] %}
+          {{ main_image }}
           {{ main_image | image_url: width: 200 }}
         {% endfor %}
         {{ product.metafields.custom.singimg.value.sku }}
