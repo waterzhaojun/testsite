@@ -10,7 +10,7 @@
         {{ product.metafields.custom.singimg.value.sku }}
         {% for sty in product.metafields.custom.wsstyle %}
           <div>dfdfdf</div>
-          {{ sty.value.sku }}
+          {{ sty }}
         {% endfor %}
         {% if block.settings.values != blank %}
           {% assign line_item_property_enable = true %}
