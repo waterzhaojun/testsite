@@ -10,8 +10,7 @@
         {% assign styles = product.metafields.custom.wsstyle.value %}
         {% for sty in styles %}
           {% assign main_image = sty.images.value | first %}
-          {{ sty.sku }}
-          {{ main_image | image_url: width: 300 | image_tag }}
+
           <input
             type="radio"
             id="{{ sty.sku }}"
@@ -22,7 +21,7 @@
             {% endif %}
           >
           <label for="{{ sty.sku }}">
-            {{ sty.sku }}
+            {{ main_image | image_url: width: 300 | image_tag }}
           </label>
         {% endfor %}
 
