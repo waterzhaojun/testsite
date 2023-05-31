@@ -12,6 +12,18 @@
           {% assign main_image = sty.images.value | first %}
           {{ sty.sku }}
           {{ main_image | image_url: width: 300 | image_tag }}
+          <input
+            type="radio"
+            id="{{ custom_product_option_title | handleize }}-{{ option | strip }}"
+            name="{{ custom_product_option_title | handleize }}"
+            value="{{ option | strip }}"
+            {% if forloop.first %}
+              checked
+            {% endif %}
+          >
+          <label for="{{ custom_product_option_title | handleize }}-{{ option | strip }}">
+            {{ option | strip }}
+          </label>
         {% endfor %}
 
         {% if block.settings.values != blank %}
