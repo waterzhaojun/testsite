@@ -9,7 +9,7 @@
       {% when 'product_style_option' %}
       {{ product.metafields.custom.singimg.value.sku }}
       {% for sty in product.metafields.custom.wsstyle %}
-        {{ sty }}
+        {{ sty.value }}
       {% endfor %}
       {% if block.settings.values != blank %}
 
@@ -37,7 +37,7 @@
         </fieldset>
 
         <script>
-          let radioInputs = document.querySelectorAll('input[type=radio][name="                      {{ custom_product_option_title | handleize }} "]');
+          let radioInputs = document.querySelectorAll('input[type=radio][name="                       {{ custom_product_option_title | handleize }} "]');
           radioInputs.forEach(radio => radio.addEventListener('change', () => document.querySelector('#CustomProductOptionProperty').value = radio.value));
         </script>
       {% endif %}
