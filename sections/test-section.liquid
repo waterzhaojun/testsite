@@ -10,7 +10,7 @@
         {% assign styles = product.metafields.custom.wsstyle.value %}
         {% for sty in styles %}
           {% assign main_image = sty.images %}
-          {{ main_image }}
+          {{ main_image.value }}
         {% endfor %}
 
         {% if block.settings.values != blank %}
