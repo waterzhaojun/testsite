@@ -9,7 +9,7 @@
       {% when 'product_style_option' %}
         {{ product.metafields.custom.singimg.value.sku }}
         {{ product.metafields.custom.wsstyle.values }}
-        {% for sty in product.metafields.custom.wsstyle %}
+        {% for sty in product.metafields.custom.wsstyle.values %}
           <div>aa</div>
         {% endfor %}
         {% if block.settings.values != blank %}
