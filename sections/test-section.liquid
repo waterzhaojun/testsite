@@ -8,6 +8,7 @@
         <div>{{ product.description }}</div>
       {% when 'product_style_option' %}
         {% assign styles = product.metafields.custom.wsstyle %}
+        {{ styles }}
         {% for sty in styles %}
           {{ sty }}
         {% endfor %}
