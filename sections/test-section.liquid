@@ -1,4 +1,5 @@
 <section>
+  {{ section.id }}
   {%- for media in product.media -%}
     <li
       id="Slide-{{ section.id }}-{{ media.id }}"
@@ -67,7 +68,7 @@
         </fieldset>
 
         <script>
-          let radioInputs = document.querySelectorAll('input[type=radio][name="                           {{ custom_product_option_title | handleize }} "]');
+          let radioInputs = document.querySelectorAll('input[type=radio][name="                            {{ custom_product_option_title | handleize }} "]');
           radioInputs.forEach(radio => radio.addEventListener('change', () => document.querySelector('#CustomProductOptionProperty').value = radio.value));
         </script>
       {% endif %}
