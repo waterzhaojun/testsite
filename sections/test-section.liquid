@@ -38,6 +38,15 @@
           {% for sty in styles %}
             {% assign imgs = sty.images.value %}
             {% for img in imgs %}
+              {% render 'product-thumbnail',
+                media: img,
+                position: media_position,
+                loop: section.settings.enable_video_looping,
+                modal_id: section.id,
+                xr_button: true,
+                media_width: media_width,
+                lazy_load: true
+              %}
               {{ img | image_url: width: 300 | image_tag }}
             {% endfor %}
           {% endfor %}
