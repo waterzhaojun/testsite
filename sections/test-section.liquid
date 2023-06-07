@@ -40,7 +40,7 @@
             <li>===2: {{ sty.images.values }}===</li>
 
             {% assign imgs = sty.images.values %}
-            {% for img in imgs %}
+            {% for img in sty.images %}
               {%- assign media_position = media_position | default: 0 | plus: 1 -%}
               <div>3:{{ img }}</div>
               {% render 'product-thumbnail',
