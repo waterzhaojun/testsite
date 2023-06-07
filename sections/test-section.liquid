@@ -36,6 +36,7 @@
             endif
           -%}
           {{ styles }}
+          {{  }}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
             <li
@@ -329,8 +330,8 @@
           </fieldset>
 
           <script>
-            let radioInputs = document.querySelectorAll('input[type=radio][name="                                          {{ custom_product_option_title | handleize }} "]');
-            radioInputs.forEach(radio => radio.addEventListener('change', () => document.querySelector('#CustomProductOptionProperty').value = radio.value));
+            let radioInputs = document.querySelectorAll('input[type=radio][name="{{ custom_product_option_title | handleize }} "]');
+            radioInputs.forEach(radio => radio.addEventListener('change', () => {document.querySelector('#CustomProductOptionProperty').value = radio.value;}));
           </script>
         {% endif %}
     {% endcase %}
@@ -416,3 +417,9 @@
   ]
 }
 {% endschema %}
+
+<!-- - Start SomeAppCode - -->
+<script>
+  ...
+</script>
+<!-- - End SomeAppCode - -->
