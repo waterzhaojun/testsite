@@ -37,7 +37,7 @@
           -%}
           {% for sty in styles %}
             <p>===1: {{ sty.images }}===</p>
-            <li>===2: {{ sty.images.values }}===</li>
+            <li>===2: {{ sty.images.value }}===</li>
 
             {% assign imgs = sty.images.values %}
             {% for img in sty.images %}
