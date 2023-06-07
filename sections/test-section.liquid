@@ -285,24 +285,24 @@
         <div>{{ product.description }}</div>
       {% when 'product_style_option' %}
         {% assign styles = product.metafields.custom.wsstyle.value %}
-      <fieldset id="ProductOption-{{custom_product_option_title | handleize }}" class="product-form__input">
-        {% for sty in styles %}
-          {% assign main_image = sty.images.value | first %}
+        <fieldset id="ProductOption-{{custom_product_option_title | handleize }}" class="product-form__input">
+          {% for sty in styles %}
+            {% assign main_image = sty.images.value | first %}
 
-          <input
-            type="radio"
-            id="{{ sty.sku | handleize }}"
-            name="aaa"
-            value="{{ sty.sku }}"
-            {% if forloop.first %}
-              checked
-            {% endif %}
-          >
-          <label for="{{ sty.sku }}">
-            {{ sty.sku }}
-          </label>
-        {% endfor %}
-
+            <input
+              type="radio"
+              id="{{ sty.sku | handleize }}"
+              name="aaa"
+              value="{{ sty.sku }}"
+              {% if forloop.first %}
+                checked
+              {% endif %}
+            >
+            <label for="{{ sty.sku }}">
+              {{ sty.sku }}
+            </label>
+          {% endfor %}
+        </fieldset>
         {% if block.settings.values != blank %}
           {% assign line_item_property_enable = true %}
 
@@ -312,23 +312,22 @@
 
           {% assign custom_product_options = block.settings.values | strip_html | split: ',' %}
 
-          
-            <legend class="form__label">{{ custom_product_option_title }}</legend>
-            {% for option in custom_product_options %}
-              <input
-                type="radio"
-                id="{{ custom_product_option_title | handleize }}-{{ option | strip }}"
-                name="{{ custom_product_option_title | handleize }}"
-                value="{{ option | strip }}"
-                {% if forloop.first %}
-                  checked
-                {% endif %}
-              >
-              <label for="{{ custom_product_option_title | handleize }}-{{ option | strip }}">
-                {{ option | strip }}
-              </label>
-            {% endfor %}
-          </fieldset>
+          <legend class="form__label">{{ custom_product_option_title }}</legend>
+          {% for option in custom_product_options %}
+            <input
+              type="radio"
+              id="{{ custom_product_option_title | handleize }}-{{ option | strip }}"
+              name="{{ custom_product_option_title | handleize }}"
+              value="{{ option | strip }}"
+              {% if forloop.first %}
+                checked
+              {% endif %}
+            >
+            <label for="{{ custom_product_option_title | handleize }}-{{ option | strip }}">
+              {{ option | strip }}
+            </label>
+          {% endfor %}
+
           <div>==================here ==================</div>
           <input
             type="text"
