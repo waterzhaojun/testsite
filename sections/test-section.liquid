@@ -310,7 +310,7 @@
 
           // Hide all the variant images by default
             variantImages.forEach(function(image) {
-              image.hidden = "show";});
+              image.removeAttribute("hidden");});
           }));
         </script>
     {% endcase %}
