@@ -36,8 +36,8 @@
             endif
           -%}
           {% for sty in styles %}
-            <p>1: {{ sty.images }}</p>
-            <li>2: {{ sty.images.values }}</li>
+            <p>===1: {{ sty.images }}===</p>
+            <li>===2: {{ sty.images.values }}===</li>
 
             {% assign imgs = sty.images.values %}
             {% for img in imgs %}
