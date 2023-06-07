@@ -304,7 +304,9 @@
             });
           });
           let radioInputs = document.querySelectorAll('input[type=radio][name="aaa"]');
-          radioInputs.forEach(radio => radio.addEventListener('change', () => {document.querySelector('#CustomProductOptionProperty').value = radio.value;}));
+          radioInputs.forEach(radio => radio.addEventListener('change', () => {
+            document.querySelector('#CustomProductOptionProperty').value = radio.value;
+          }));
         </script>
     {% endcase %}
   {% endfor %}
