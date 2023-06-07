@@ -290,8 +290,8 @@
 
           <input
             type="radio"
-            id="{{ sty.sku }}"
-            name="aaa"
+            id="{{ sty.sku | handleize }}"
+            name="{{ sty.sku | handleize }}"
             value="{{ sty.sku }}"
             {% if forloop.first %}
               checked
@@ -336,7 +336,7 @@
           >
 
           <script>
-            let radioInputs = document.querySelectorAll('input[type=radio][name="{{ custom_product_option_title | handleize }} "]');
+            let radioInputs = document.querySelectorAll('input[type=radio][name="{{ sty.sku | handleize }} "]');
             radioInputs.forEach(radio => radio.addEventListener('change', () => {document.querySelector('#CustomProductOptionProperty').value = radio.value;}));
           </script>
         {% endif %}
