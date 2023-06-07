@@ -36,8 +36,8 @@
             endif
           -%}
           {% for sty in styles %}
-            {{ sty.images }}
-            {{ sty.images.values }}
+            <li>{{ sty.images }}</li>
+            <li>{{ sty.images.values }}</li>
             {% assign imgs = sty.images.values %}
             {% for img in imgs %}
               {%- assign media_position = media_position | default: 0 | plus: 1 -%}
