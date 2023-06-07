@@ -300,7 +300,7 @@
 
           // Hide all the variant images by default
             variantImages.forEach(function(image) {
-              image.hidden = true;
+              image.hidden = "hidden";
             });
           let radioInputs = document.querySelectorAll('input[type=radio][name="aaa"]');
           radioInputs.forEach(radio => radio.addEventListener('change', () => {document.querySelector('#CustomProductOptionProperty').value = radio.value;}));
