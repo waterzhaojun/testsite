@@ -78,6 +78,7 @@
                 data-media-id="{{ section.id }}-{{ media.id }}"
               >
                 {%- assign media_position = media_position | default: 0 | plus: 1 -%}
+                {{ media }}
                 {% render 'product-thumbnail',
                   media: media,
                   position: media_position,
