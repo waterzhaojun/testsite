@@ -294,8 +294,17 @@
         >
 
         <script>
-          let radioInputs = document.querySelectorAll('input[type=radio][name="aaa"]');
-          radioInputs.forEach(radio => radio.addEventListener('change', () => {document.querySelector('#CustomProductOptionProperty').value = radio.value;}));
+                  document.addEventListener('DOMContentLoaded', function() {
+
+          // Get all the variant image elements
+          var variantImages = document.querySelectorAll('.variant-image');
+
+          // Hide all the variant images by default
+          variantImages.forEach(function(image) {
+            image.style.display = 'none';
+          });
+                  let radioInputs = document.querySelectorAll('input[type=radio][name="aaa"]');
+                  radioInputs.forEach(radio => radio.addEventListener('change', () => {document.querySelector('#CustomProductOptionProperty').value = radio.value;}));
         </script>
     {% endcase %}
   {% endfor %}
