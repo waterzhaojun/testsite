@@ -177,7 +177,7 @@
                 </button>
               </li>
             {%- endif -%}
-            {%- for media in product.media -%}
+            {%- for media in medias -%}
               {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
                 {%- liquid
                   capture media_index
