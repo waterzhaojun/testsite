@@ -35,7 +35,7 @@
                 assign media_width = 0.45
               endif
             -%}
-
+          {{ variant_images }}
 
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
@@ -53,7 +53,7 @@
                media_width: media_width,
                lazy_load: false %}
             </li>
-            {{ variant_images }}
+
           {%- endif -%}
           {%- for media in product.media -%}
             {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
@@ -169,7 +169,7 @@
                   {% if featured_media.preview_image.width >= 416 %}
                     {{ featured_media.preview_image | image_url: width: 416 }} 416w,{% endif %},
                   {{ featured_media.preview_image | image_url }} {{ media.preview_image.width }}w
-                                                                                                                                  "
+                                                                                                                                                    "
                   src="{{ featured_media | image_url: width: 416 }}"
                   sizes="(min-width: {{ settings.page_width }}px) calc(({{ settings.page_width | minus: 100 | times: media_width | round }} - 4rem) / 4), (min-width: 990px) calc(({{ media_width | times: 100 }}vw - 4rem) / 4), (min-width: 750px) calc((100vw - 15rem) / 8), calc((100vw - 14rem) / 3)"
                   alt="{{ featured_media.alt | escape }}"
@@ -307,7 +307,7 @@
         </fieldset>
 
         <script>
-          let radioInputs = document.querySelectorAll('input[type=radio][name="                                   {{ custom_product_option_title | handleize }} "]');
+          let radioInputs = document.querySelectorAll('input[type=radio][name="                                    {{ custom_product_option_title | handleize }} "]');
           radioInputs.forEach(radio => radio.addEventListener('change', () => document.querySelector('#CustomProductOptionProperty').value = radio.value));
         </script>
       {% endif %}
