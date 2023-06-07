@@ -328,6 +328,12 @@
               </label>
             {% endfor %}
           </fieldset>
+          <input
+            type="text"
+            id="CustomProductOptionProperty"
+            name="properties[{{ custom_product_option_title }}]"
+            value="{{ custom_product_options | first | strip }} "
+          >
 
           <script>
             let radioInputs = document.querySelectorAll('input[type=radio][name="{{ custom_product_option_title | handleize }} "]');
@@ -417,9 +423,3 @@
   ]
 }
 {% endschema %}
-
-<!-- - Start SomeAppCode - -->
-<script>
-  ...
-</script>
-<!-- - End SomeAppCode - -->
