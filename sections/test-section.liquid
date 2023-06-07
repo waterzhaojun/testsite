@@ -306,6 +306,11 @@
           let radioInputs = document.querySelectorAll('input[type=radio][name="aaa"]');
           radioInputs.forEach(radio => radio.addEventListener('change', () => {
             document.querySelector('#CustomProductOptionProperty').value = radio.value;
+            var variantImages = document.querySelectorAll('.img');
+
+          // Hide all the variant images by default
+            variantImages.forEach(function(image) {
+              image.hidden = "show";});
           }));
         </script>
     {% endcase %}
