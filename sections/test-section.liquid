@@ -38,6 +38,7 @@
           {% for sty in styles %}
             {% assign imgs = sty.images.value %}
             {% for img in imgs %}
+              {%- assign media_position = media_position | default: 0 | plus: 1 -%}
               {% render 'product-thumbnail',
                 media: img,
                 position: media_position,
