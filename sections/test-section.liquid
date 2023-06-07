@@ -299,11 +299,11 @@
             var variantImages = document.querySelectorAll('.img');
 
           // Hide all the variant images by default
-          variantImages.forEach(function(image) {
-            image.style.display = 'none';
-          });
-                  let radioInputs = document.querySelectorAll('input[type=radio][name="aaa"]');
-                  radioInputs.forEach(radio => radio.addEventListener('change', () => {document.querySelector('#CustomProductOptionProperty').value = radio.value;}));
+            variantImages.forEach(function(image) {
+              image.style.display = 'none';
+            });
+          let radioInputs = document.querySelectorAll('input[type=radio][name="aaa"]');
+          radioInputs.forEach(radio => radio.addEventListener('change', () => {document.querySelector('#CustomProductOptionProperty').value = radio.value;}));
         </script>
     {% endcase %}
   {% endfor %}
