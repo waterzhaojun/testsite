@@ -36,7 +36,8 @@
             endif
           -%}
           {% for sty in styles %}
-            {% assign imgs = sty.images %}
+            {{ sty.images }}
+            {% assign imgs = sty.images.values %}
             {% for img in imgs %}
               {%- assign media_position = media_position | default: 0 | plus: 1 -%}
               {{ img }}
