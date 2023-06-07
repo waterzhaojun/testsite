@@ -43,6 +43,7 @@
             {% for img in imgs %}
               {%- assign media_position = media_position | default: 0 | plus: 1 -%}
               <div>---3:{{ img.preview_image }}---</div>
+              {{ img.preview_image | image_url: width: 1946 | image_tag }}
               {% render 'product-thumbnail',
                 media: img,
                 position: media_position,
