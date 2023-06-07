@@ -38,9 +38,8 @@
           {% for sty in styles %}
             {% assign imgs = sty.images.value %}
             {% for img in imgs %}
-              {{ img }}
+              {{ img | image_url: width: 300 | image_tag }}
             {% endfor %}
-            <div>{{ sty.images }}</div>
           {% endfor %}
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
