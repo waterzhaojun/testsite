@@ -362,6 +362,31 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
+            {% when 'product_style_option' %}
+              <fieldset id="ProductOption-{{custom_product_option_title | handleize }}" class="product-form__input">
+                {% for sty in styles %}
+                  <input
+                    type="radio"
+                    id="{{ sty.sku | handleize }}"
+                    name="aaa"
+                    value="{{ sty.sku }}"
+                    {% if forloop.first %}
+                      checked
+                    {% endif %}
+                  >
+                  <label for="{{ sty.sku }}">
+                    {{ sty.sku }}
+                  </label>
+                {% endfor %}
+              </fieldset>
+
+              <div>==================here ==================</div>
+              <input
+                type="text"
+                id="CustomProductOptionProperty"
+                name="properties[{{ custom_product_option_title }}]"
+                value="inputtext"
+              >
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden">
