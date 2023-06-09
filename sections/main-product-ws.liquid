@@ -1017,12 +1017,16 @@
     document.addEventListener('DOMContentLoaded', function() {
       var ws_style_ids = '{{ ws_style_ids }}';
       var ws_styles = ws_style_ids.split('#');
+      for (i=0;i<ws_styles.length;i++){
+        ws_styles[i] = ws_styles[i].split('@')
+      }
           // Get all the variant image elements
-          var variantImages = document.querySelectorAll('.img');
+          var variantImages = document.querySelectorAll('.thumbnail');
 
         // Hide all the variant images by default
-          variantImages.forEach(function(image) {
-            image.hidden = "hidden";
+          variantImages.forEach(function(btn) {
+            //btn.hidden = "hidden";
+            btn.display = none;
           });
         });
         let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
