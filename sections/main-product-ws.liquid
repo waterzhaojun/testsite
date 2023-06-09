@@ -80,6 +80,7 @@
                   assign ws_style_ids = ws_style_ids | append: st.id
                   assign ws_style_ids = ws_style_ids | append: '&'
                 endfor
+                assign ws_style_ids = ws_style_ids | append: '#'
                 assign medias = sty.images.value | concat: medias
               endfor
               assign media_count = medias.size
