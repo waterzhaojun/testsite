@@ -75,10 +75,9 @@
               assign medias = product.media
               for sty in styles
                 assign ws_style_ids = ws_style_ids | append: sty.sku
-                assign ws_style_ids = ws_style_ids | append: '@'
                 for st in sty.images.value
-                  assign ws_style_ids = ws_style_ids | append: st.id
                   assign ws_style_ids = ws_style_ids | append: '&'
+                  assign ws_style_ids = ws_style_ids | append: st.id
                 endfor
                 assign ws_style_ids = ws_style_ids | append: '#'
                 assign medias = sty.images.value | concat: medias
@@ -1016,7 +1015,8 @@
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      ws_style_ids = '{{ ws_style_ids }}'
+      var ws_style_ids = '{{ ws_style_ids }}';
+      var ws_styles = ws_style_ids.split('#');
           // Get all the variant image elements
           var variantImages = document.querySelectorAll('.img');
 
