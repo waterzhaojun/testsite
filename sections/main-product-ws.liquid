@@ -106,6 +106,8 @@
                 %}
               </li>
             {%- endif -%}
+            {% for sty in styles %}
+            {% endfor %}
             {%- for media in product.media -%}
               {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
                 <li
