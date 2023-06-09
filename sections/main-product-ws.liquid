@@ -1023,12 +1023,12 @@
           // Get all the variant image elements
           var variantImages = document.querySelectorAll('.thumbnail');
 
-        // Hide all the variant images by default
-          variantImages.forEach(function(btn) {
-            btn.hidden = "aaa";
-            //btn.hidden = "hidden";
-          });
-        });
+        // // Hide all the variant images by default
+        //   variantImages.forEach(function(btn) {
+        //     btn.hidden = "aaa";
+        //     //btn.hidden = "hidden";
+        //   });
+        // });
         let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
         radioInputs.forEach(radio => radio.addEventListener('change', () => {
           document.querySelector('#CustomProductOptionProperty').value = radio.value;
