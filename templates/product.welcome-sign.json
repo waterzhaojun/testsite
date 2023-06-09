@@ -26,13 +26,15 @@
             "picker_type": "button"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
         "product_style_option": {
           "type": "product_style_option",
+          "settings": {
+            "title": "",
+            "values": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
           "settings": {
           }
         },
@@ -67,8 +69,8 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "gallery_layout": "stacked",
-        "media_size": "large",
+        "gallery_layout": "thumbnail",
+        "media_size": "small",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
