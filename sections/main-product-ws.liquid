@@ -71,6 +71,9 @@
             {%- liquid
               assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
               assign styles = product.metafields.custom.wsstyle.value
+              for sty in styles
+                assign product.media = sty.images.value | concat: product.media
+              endfor
               assign media_count = product.media.size
               for sty in styles
                 assign media_count = media_count | plus: sty.images.value.size
@@ -106,26 +109,6 @@
                 %}
               </li>
             {%- endif -%}
-            {% for sty in styles %}
-              {% for img in sty.images.value %}
-                <li
-                  id="Slide-{{ section.id }}-{{ img.id }}"
-                  class="product__media-item grid__item slider__slide{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}"
-                  data-media-id="{{ section.id }}-{{ img.id }}"
-                >
-                  {%- assign media_position = media_position | default: 0 | plus: 1 -%}
-                  {% render 'product-thumbnail',
-                    media: img,
-                    position: media_position,
-                    loop: section.settings.enable_video_looping,
-                    modal_id: section.id,
-                    xr_button: true,
-                    media_width: media_width,
-                    lazy_load: true
-                  %}
-                </li>
-              {% endfor %}
-            {% endfor %}
             {%- for media in product.media -%}
               {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
                 <li
