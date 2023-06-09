@@ -71,13 +71,11 @@
             {%- liquid
               assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
               assign styles = product.metafields.custom.wsstyle.value
+              assign medias = product.media
               for sty in styles
-                assign product.media = sty.images.value | concat: product.media
+                assign medias = sty.images.value | concat: medias
               endfor
-              assign media_count = product.media.size
-              for sty in styles
-                assign media_count = media_count | plus: sty.images.value.size
-              endfor
+              assign media_count = medias.size
               if section.settings.hide_variants
                 assign media_count = media_count | minus: variant_images.size | plus: 1
               endif
