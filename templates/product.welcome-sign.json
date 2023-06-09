@@ -59,6 +59,7 @@
         "title",
         "price",
         "variant_picker",
+        "product_style_option",
         "quantity_selector",
         "buy_buttons",
         "description",
