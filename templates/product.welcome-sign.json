@@ -31,6 +31,11 @@
           "settings": {
           }
         },
+        "product_style_option": {
+          "type": "product_style_option",
+          "settings": {
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
