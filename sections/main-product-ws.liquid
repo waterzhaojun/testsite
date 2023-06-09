@@ -71,9 +71,13 @@
             {%- liquid
               assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
               assign styles = product.metafields.custom.wsstyle.value
-              assign style_image_ids = '' | split: ''
+              assign ws_style_ids = ''
               assign medias = product.media
               for sty in styles
+                assign ws_style_ids = ws_style_ids | append: sty.sku
+                for st in sty.images.value
+                  assign ws_style_ids = ws_style_ids | append: st.id
+                endfor
                 assign medias = sty.images.value | concat: medias
               endfor
               assign media_count = medias.size
