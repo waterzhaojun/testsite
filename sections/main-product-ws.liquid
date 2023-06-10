@@ -375,6 +375,7 @@
                 {%- endform -%}
               </div>
             {% when 'product_style_option' %}
+              <div class="form__label">Style</div>
               <fieldset id="ProductOption-{{custom_product_option_title | handleize }}" class="product-form__input">
                 {% for sty in styles %}
                   <input
