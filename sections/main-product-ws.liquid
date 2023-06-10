@@ -1040,7 +1040,7 @@
       document.querySelectorAll('.thumb-'+radio.value).forEach(function(x) {
         x.removeAttribute("hidden");
       });
-      document.querySelectorAll('li[.product__media-item]').forEach(function(x) {
+      document.querySelectorAll('.product__media-item').forEach(function(x) {
         x.classList.remove("is-active");
       })
       document.querySelector('.presentation-'+radio.value).classList.add('is-active');
