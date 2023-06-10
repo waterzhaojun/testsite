@@ -394,6 +394,18 @@
 
             {% when 'assistant' %}
               <div>assistant: {{ block.settings.id }}</div>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="need_proof"
+                  form="{{ product_form_id }}"
+                  name="properties[Need Proof]"
+                >
+                <label class="form-check-label" for="need_proof">
+                  Check here if you need a proof before print ($5.00):
+                </label>
+              </div>
 
             {%- when 'description' -%}
               {%- if product.description != blank -%}
@@ -528,19 +540,6 @@
                   <option value="font3">Font 3</option>
                   <option value="font4">Font 4</option>
                 </select>
-              </div>
-
-              <div class="form-check form-switch">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="need_proof"
-                  form="{{ product_form_id }}"
-                  name="properties[Need Proof]"
-                >
-                <label class="form-check-label" for="need_proof">
-                  Check here if you need a proof before print ($5.00):
-                </label>
               </div>
 
             {%- when 'popup' -%}
