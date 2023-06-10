@@ -1022,12 +1022,12 @@
       // for (i=0;i<ws_styles.length-1;i++){
       //   tmp = ws_styles[i].split('@')
       //   for (j=1;j<tmp.length;j++){
-      //     document.querySelector('#Slide-Thumbnails-template--16802087960819__main-2').hidden="hidden";
+          // document.querySelector('#Slide-Thumbnails-template--16802087960819__main-2').hidden="hidden";
       //   }
       // }
           // Get all the variant image elements
 
-          var variantImages = document.querySelectorAll('button[class="thumbnail"]');
+          var variantImages = document.querySelectorAll('li[id*="Slide-Thumbnails-template--"]');
           variantImages.forEach(function(btn) {
             btn.hidden = "hidden";
           });
