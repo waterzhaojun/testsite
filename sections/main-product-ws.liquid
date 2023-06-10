@@ -1018,7 +1018,7 @@
       var ws_style_ids = '{{ ws_style_ids }}';
       var ws_styles = ws_style_ids.split('#');
 
-      var styleli = document.querySelector('#Slide-Thumbnails-template--16802087960819__main-2');
+      var styleli = document.querySelector('li[id*="Slide-Thumbnails-template--16802087960819' + tmp[j] + '"]');
       styleli.classList.add("style-img");
       // for (i=0;i<ws_styles.length-1;i++){
       //   var tmp = ws_styles[i].split('@');
