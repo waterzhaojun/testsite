@@ -394,13 +394,6 @@
                 {% endfor %}
               </fieldset>
 
-              <div>==================here ==================</div>
-              <input
-                type="text"
-                id="CustomProductOptionProperty"
-                name="properties[{{ custom_product_option_title }}]"
-                value="inputtext"
-              >
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden">
