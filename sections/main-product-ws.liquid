@@ -1045,7 +1045,7 @@
 
 
       let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
-      radioInputs.forEach(radio => radio.addEventListener('change', ()=>setStyleMedia(radio.sku)));
+      radioInputs.forEach(radio => radio.addEventListener('change', ()=>setStyleMedia(radio.value)));
     });
   </script>
 </section>
