@@ -1022,7 +1022,8 @@
         tmp = ws_styles[i].split('@')
         for (j=1;j<tmp.length;j++){
           // document.querySelector('#Slide-Thumbnails-template--16802087960819__main-2').hidden="hidden";
-          var variantImages = document.querySelector('li[id*="Slide-Thumbnails-template--' + tmp[j] + '"]');
+          var styleli = document.querySelector('li[id*="Slide-Thumbnails-template--' + tmp[j] + '"]');
+          styleli.classList.add("style-img");
         }
       }
           // Get all the variant image elements
