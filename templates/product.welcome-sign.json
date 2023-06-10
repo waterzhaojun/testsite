@@ -26,6 +26,12 @@
             "picker_type": "button"
           }
         },
+        "04650b32-03ff-42ea-b26b-6e56abdb1335": {
+          "type": "assistant",
+          "settings": {
+            "text": ""
+          }
+        },
         "product_style_option": {
           "type": "product_style_option",
           "settings": {
@@ -61,6 +67,7 @@
         "title",
         "price",
         "variant_picker",
+        "04650b32-03ff-42ea-b26b-6e56abdb1335",
         "product_style_option",
         "quantity_selector",
         "buy_buttons",
