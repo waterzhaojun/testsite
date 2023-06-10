@@ -1034,7 +1034,7 @@
 
     let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
     radioInputs.forEach(radio => radio.addEventListener('change', () => {
-      var style_image_lis = document.querySelectorAll('#style-img');
+      var style_image_lis = document.querySelectorAll('.style-img');
       style_image_lis.forEach(function(x) {
         x.hidden="hidden";
       });
