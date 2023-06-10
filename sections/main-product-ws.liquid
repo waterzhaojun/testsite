@@ -1014,38 +1014,55 @@
     }
   </script>
   <script>
-    // Add class to style related images.
-    document.addEventListener('DOMContentLoaded', function() {
-      var ws_style_ids = '{{ ws_style_ids }}';
-      var ws_styles = ws_style_ids.split('#');
+    function setStyleMedia(sku) {
+      let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
+      radioInputs.forEach(radio => radio.addEventListener('change', () => {
+        var style_image_lis = document.querySelectorAll('.style-img');
+        style_image_lis.forEach(function(x) {
+          x.hidden="hidden";
+        });
+        document.querySelectorAll('.thumb-'+radio.value).forEach(function(x) {
+          x.removeAttribute("hidden");
+        });
+        document.querySelectorAll('.product__media-item').forEach(function(x) {
+          x.classList.remove("is-active");
+        })
+        document.querySelector('.presentation-'+radio.value).classList.add('is-active');
 
-      for (i=0;i<ws_styles.length-1;i++){
-        var tmp = ws_styles[i].split('&');
-        for (j=1;j<tmp.length;j++){
-          var styleThumb = document.querySelector('li[data-target$="' + tmp[j] + '"]');
-          var stylePresentation = document.querySelector('li[data-media-id$="' + tmp[j] + '"]');
-          styleThumb.classList.add("style-img");
-          styleThumb.classList.add("thumb-" + tmp[0]);
-          stylePresentation.classList.add("presentation-" + tmp[0]);
+      }))
+    }
+      // Add class to style related images.
+      document.addEventListener('DOMContentLoaded', function() {
+        var ws_style_ids = '{{ ws_style_ids }}';
+        var ws_styles = ws_style_ids.split('#');
+
+        for (i=0;i<ws_styles.length-1;i++){
+          var tmp = ws_styles[i].split('&');
+          for (j=1;j<tmp.length;j++){
+            var styleThumb = document.querySelector('li[data-target$="' + tmp[j] + '"]');
+            var stylePresentation = document.querySelector('li[data-media-id$="' + tmp[j] + '"]');
+            styleThumb.classList.add("style-img");
+            styleThumb.classList.add("thumb-" + tmp[0]);
+            stylePresentation.classList.add("presentation-" + tmp[0]);
+          }
         }
-      }
-    });
-
-    let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
-    radioInputs.forEach(radio => radio.addEventListener('change', () => {
-      var style_image_lis = document.querySelectorAll('.style-img');
-      style_image_lis.forEach(function(x) {
-        x.hidden="hidden";
       });
-      document.querySelectorAll('.thumb-'+radio.value).forEach(function(x) {
-        x.removeAttribute("hidden");
-      });
-      document.querySelectorAll('.product__media-item').forEach(function(x) {
-        x.classList.remove("is-active");
-      })
-      document.querySelector('.presentation-'+radio.value).classList.add('is-active');
 
-    }));
+      let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
+      radioInputs.forEach(radio => radio.addEventListener('change', () => {
+        var style_image_lis = document.querySelectorAll('.style-img');
+        style_image_lis.forEach(function(x) {
+          x.hidden="hidden";
+        });
+        document.querySelectorAll('.thumb-'+radio.value).forEach(function(x) {
+          x.removeAttribute("hidden");
+        });
+        document.querySelectorAll('.product__media-item').forEach(function(x) {
+          x.classList.remove("is-active");
+        })
+        document.querySelector('.presentation-'+radio.value).classList.add('is-active');
+
+      }));
   </script>
 </section>
 
