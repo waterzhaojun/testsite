@@ -394,6 +394,9 @@
                 {% endfor %}
               </fieldset>
 
+            {% when 'assistant' %}
+              <div>{{ block.settings.id }}</div>
+
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden">
