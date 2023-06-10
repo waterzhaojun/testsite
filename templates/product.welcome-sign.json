@@ -29,7 +29,7 @@
         "assistant": {
           "type": "assistant",
           "settings": {
-            "text": "assistant"
+            "id": "assistant"
           }
         },
         "product_style_option": {
