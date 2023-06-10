@@ -1037,10 +1037,12 @@
       style_image_lis.forEach(function(x) {
         x.hidden="hidden";
       });
-      var sku_lis = document.querySelectorAll('.thumb-'+radio.value);
-      sku_lis.forEach(function(x) {
-        x.removeAttribute("hidden")
+      document.querySelectorAll('.thumb-'+radio.value).forEach(function(x) {
+        x.removeAttribute("hidden");
       });
+      document.querySelectorAll('li[class=product__media-item]').forEach(function(x) {
+        x.classList.remove("is-active");
+      })
       document.querySelector('.presentation-'+radio.value).classList.add('is-active');
 
     }));
