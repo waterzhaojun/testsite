@@ -1045,21 +1045,8 @@
       }
     });
 
-      let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
-      radioInputs.forEach(radio => radio.addEventListener('change', () => {
-        var style_image_lis = document.querySelectorAll('.style-img');
-        style_image_lis.forEach(function(x) {
-          x.hidden="hidden";
-        });
-        document.querySelectorAll('.thumb-'+radio.value).forEach(function(x) {
-          x.removeAttribute("hidden");
-        });
-        document.querySelectorAll('.product__media-item').forEach(function(x) {
-          x.classList.remove("is-active");
-        })
-        document.querySelector('.presentation-'+radio.value).classList.add('is-active');
-
-      }));
+    let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
+    radioInputs.forEach(radio => radio.addEventListener('change', setStyleMedia(radio.sku)));
   </script>
 </section>
 
