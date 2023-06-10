@@ -1014,6 +1014,7 @@
     }
   </script>
   <script>
+    // Add class to style related images.
     document.addEventListener('DOMContentLoaded', function() {
       var ws_style_ids = '{{ ws_style_ids }}';
       var ws_styles = ws_style_ids.split('#');
@@ -1026,19 +1027,22 @@
           // document.querySelector('#Slide-Thumbnails-template--16802087960819__main-2').hidden="hidden";
           var styleli = document.querySelector('li[data-target$="' + tmp[j] + '"]');
           styleli.classList.add("style-img");
-          styleli.classList.add(tmp[j]);
+          styleli.classList.add(tmp[0]);
         }
       }
     });
-        // let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
-        // radioInputs.forEach(radio => radio.addEventListener('change', () => {
-        //   document.querySelector('#CustomProductOptionProperty').value = radio.value;
-        //   var variantImages = document.querySelectorAll('.img');
 
-        // // Hide all the variant images by default
-        //   variantImages.forEach(function(image) {
-        //     image.removeAttribute("hidden");});
-        // }));
+    let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
+    radioInputs.forEach(radio => radio.addEventListener('change', () => {
+      var style_image_lis = document.querySelectorAll('#style-img');
+      style_image_lis.forEach(functionx) {
+        x.hidden="hidden";
+      }
+
+    // Hide all the variant images by default
+      // variantImages.forEach(function(image) {
+      //   image.removeAttribute("hidden");});
+    }));
   </script>
 </section>
 
