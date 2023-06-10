@@ -1037,10 +1037,11 @@
       style_image_lis.forEach(function(x) {
         x.hidden="hidden";
       });
-      var sku_lis = document.querySelectorAll('.'+radio.value);
+      var sku_lis = document.querySelectorAll('.thumb-'+radio.value);
       sku_lis.forEach(function(x) {
         x.removeAttribute("hidden")
       });
+      document.querySelector('.presentation-'+radio.value).setAttribute('is-active', true);
 
     }));
 
