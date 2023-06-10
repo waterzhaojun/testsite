@@ -1038,7 +1038,10 @@
       style_image_lis.forEach(function(x) {
         x.hidden="hidden";
       });
-
+      var sku_lis = document.querySelectorAll('.'+radio.value);
+      sku_lis.forEach(function(x) {
+        x.removeAttribute("hidden")
+      });
 
     // Hide all the variant images by default
       // variantImages.forEach(function(image) {
