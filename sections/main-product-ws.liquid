@@ -1025,9 +1025,8 @@
           x.classList.remove("is-active");
         })
         document.querySelector('.presentation-'+sku).classList.add('is-active');
-
-      }))
     }
+
       // Add class to style related images.
     document.addEventListener('DOMContentLoaded', function() {
       var ws_style_ids = '{{ ws_style_ids }}';
@@ -1041,7 +1040,7 @@
           styleThumb.classList.add("style-img");
           styleThumb.classList.add("thumb-" + tmp[0]);
           stylePresentation.classList.add("presentation-" + tmp[0]);
-        }
+        };
       }
     });
 
