@@ -468,7 +468,7 @@
                 </quantity-input>
               </div>
             {%- when 'ws_custom_info' -%}
-              {% render 'ws-custom-info-wedding' %}
+              {% render 'ws-custom-info-wedding', product_form_id: product_form_id %}
 
             {%- when 'popup' -%}
               <modal-opener
