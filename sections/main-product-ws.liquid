@@ -467,7 +467,7 @@
                   </button>
                 </quantity-input>
               </div>
-
+            {%- when 'ws_custom_info' -%}
               <div class="ws_custom_info_1">
                 <div class="custom_input_title">Replace "to our wedding"</div>
                 <div class="custom_input_subtitle">
@@ -1055,6 +1055,10 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "ws_custom_info",
+      "name": "WS custom info"
     },
     {
       "type": "assistant",
