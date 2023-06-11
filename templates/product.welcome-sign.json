@@ -10,6 +10,11 @@
             "text_style": "uppercase"
           }
         },
+        "ws_custom_info": {
+          "type": "ws_custom_info",
+          "settings": {
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
