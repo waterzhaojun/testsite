@@ -468,7 +468,80 @@
                 </quantity-input>
               </div>
             {%- when 'ws_custom_info' -%}
-              {% render | "ws-custom-info-wedding" %}
+              <div class="ws_custom_info_1">
+                <div class="custom_input_title">Replace "to our wedding"</div>
+                <div class="custom_input_subtitle">
+                  It can be Rehearsal Dinner, Wedding Shower, Baby Shower, Baptism etc.
+                </div>
+                <input
+                  class="custom_input_inputfield"
+                  type="text"
+                  id="ws_custom_info_event"
+                  placeholder="e.g. Rehearsal Dinner"
+                  form="{{ product_form_id }}"
+                  name="properties[Event]"
+                >
+              </div>
+
+              <div class="ws_custom_info_1">
+                <div class="custom_input_title">Name 1 and Name 2</div>
+                <div class="custom_input_subtitle">
+                  This style is usually good for a couples event. If you have only one name, you may go back and choose
+                  the other style of the welcome sign.
+                </div>
+                <input
+                  class="custom_input_inputfield"
+                  type="text"
+                  id="ws_custom_info_names"
+                  placeholder="e.g. Emma and Morgan"
+                  form="{{ product_form_id }}"
+                  name="properties[Names]"
+                >
+              </div>
+
+              <div class="ws_custom_info_1">
+                <div class="custom_input_title">Text at the bottom (Optional)</div>
+                <div class="custom_input_subtitle">
+                  The default is "Thank you for celebrating with us!" if you don't specify.
+                </div>
+                <input
+                  class="custom_input_inputfield"
+                  type="text"
+                  id="ws_custom_info_bottomwords"
+                  form="{{ product_form_id }}"
+                  name="properties[Buttom words]"
+                >
+              </div>
+
+              <div class="ws_custom_info_1">
+                <div class="custom_input_title">Date and/or Location</div>
+                <div class="custom_input_subtitle">
+                  Replace the date at the bottom. Please type exactly as you want to write on the print. If you don't
+                  want to include date or location, input "None".
+                </div>
+                <input
+                  class="custom_input_inputfield"
+                  type="text"
+                  id="ws_custom_info_datelocation"
+                  form="{{ product_form_id }}"
+                  name="properties[Date and location]"
+                >
+              </div>
+
+              <div>
+                <div class="custom_input_title">Script Font (Optional)</div>
+                <select
+                  id="ws_custom_info_font"
+                  class="form-select form-select-lg mb-3"
+                  form="{{ product_form_id }}"
+                  name="properties[Font]"
+                >
+                  <option value="font1">Font 1</option>
+                  <option value="font2">Font 2</option>
+                  <option value="font3">Font 3</option>
+                  <option value="font4">Font 4</option>
+                </select>
+              </div>
 
             {%- when 'popup' -%}
               <modal-opener
