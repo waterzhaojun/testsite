@@ -404,7 +404,7 @@
                   name="properties[Need Proof]"
                 >
                 <label class="form-check-label" for="need_proof">
-                  Check here if you need a proof before print {{ block.settings.product.price }}
+                  Check here if you need a proof before print ${( block.settings.product.price | divided_by: 100 }}
                 </label>
               </div>
 
