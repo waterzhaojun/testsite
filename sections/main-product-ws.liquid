@@ -394,19 +394,21 @@
               </fieldset>
 
             {% when 'assistant' %}
-              <div class="form__label">{{ block.settings.id | capitalize }}</div>
-              <div class="form-check form-switch">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="need_proof"
-                  form="{{ product_form_id }}"
-                  name="properties[Need Proof]"
-                >
-                <label class="form-check-label" for="need_proof">
-                  Check here if you need a proof before print ({{ block.settings.product.price | money }})
-                </label>
-              </div>
+              {%- if product.description != blank -%}
+                <div class="form__label">{{ block.settings.id | capitalize }}</div>
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="need_proof"
+                    form="{{ product_form_id }}"
+                    name="properties[Need Proof]"
+                  >
+                  <label class="form-check-label" for="need_proof">
+                    Check here if you need a proof before print ({{ block.settings.product.price | money }})
+                  </label>
+                </div>
+              {% endif %}
 
             {%- when 'description' -%}
               {%- if product.description != blank -%}
