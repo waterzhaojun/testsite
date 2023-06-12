@@ -394,7 +394,7 @@
               </fieldset>
 
             {% when 'assistant' %}
-              {%- if product.description != blank -%}
+              {%- if product.metafields.custom.assistant != blank -%}
                 <div class="form__label">{{ block.settings.id | capitalize }}</div>
                 <div class="form-check form-switch">
                   <input
@@ -405,7 +405,9 @@
                     name="properties[Need Proof]"
                   >
                   <label class="form-check-label" for="need_proof">
-                    Check here if you need a proof before print ({{ block.settings.product.price | money }})
+                    Check here if you need a proof before print (
+                    {{- product.metafields.custom.assistant.price | money -}}
+                    )
                   </label>
                 </div>
               {% endif %}
