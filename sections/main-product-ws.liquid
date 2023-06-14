@@ -392,7 +392,8 @@
                   </label>
                 {% endfor %}
               </fieldset>
-
+            {% when 'orp' %}
+              {{ product.metafields }}
             {% when 'assistant' %}
               {%- if product.metafields.custom.assistant != blank -%}
                 {% render 'design-assistant', product_form_id: product_form_id %}
@@ -992,6 +993,18 @@
           "type": "text",
           "id": "id",
           "label": "assistant title"
+        }
+      ]
+    },
+    {
+      "type": "orp",
+      "name": "optional related products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "id",
+          "label": "Optional related products"
         }
       ]
     },
