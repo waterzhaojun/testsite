@@ -394,7 +394,8 @@
               </fieldset>
             {% when 'orp' %}
               {% for p in product.metafields.custom.orp.value %}
-                {{ p.type }}
+                {% if p.type == 'SV' %}
+                {% endif %}
               {% endfor %}
             {% when 'assistant' %}
               {%- if product.metafields.custom.assistant != blank -%}
