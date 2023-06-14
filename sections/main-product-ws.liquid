@@ -395,6 +395,7 @@
             {% when 'orp' %}
               {% for p in product.metafields.custom.orp.value %}
                 {% if p.type == 'SV' %}
+                  {% render 'design-assistant', product_form_id: product_form_id %}
                 {% endif %}
               {% endfor %}
             {% when 'assistant' %}
