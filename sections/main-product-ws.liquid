@@ -395,7 +395,7 @@
             {% when 'orp' %}
               {% for p in product.metafields.custom.orp.value %}
                 {% if p.type == 'SV' %}
-                  {% render orp-service', product_form_id: product_form_id, orp_product: p %}
+                  {% render 'orp-service', product_form_id: product_form_id, orp_product: p %}
                 {% endif %}
               {% endfor %}
 
