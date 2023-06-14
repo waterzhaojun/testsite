@@ -393,7 +393,9 @@
                 {% endfor %}
               </fieldset>
             {% when 'orp' %}
-              {{ product.metafields.custom.orp }}
+              {% for p in product.metafields.custom.orp %}
+                {{ p }}
+              {% endfor %}
             {% when 'assistant' %}
               {%- if product.metafields.custom.assistant != blank -%}
                 {% render 'design-assistant', product_form_id: product_form_id %}
