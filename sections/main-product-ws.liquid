@@ -393,7 +393,7 @@
                 {% endfor %}
               </fieldset>
             {% when 'orp' %}
-              {% for p in product.metafields.custom.orp %}
+              {% for p in product.metafields.custom.orp.value %}
                 {{ p }}
               {% endfor %}
             {% when 'assistant' %}
