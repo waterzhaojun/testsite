@@ -395,13 +395,9 @@
             {% when 'orp' %}
               {% for p in product.metafields.custom.orp.value %}
                 {% if p.type == 'SV' %}
-                  {% render 'design-assistant', product_form_id: product_form_id, assistant_product: p %}
+                  {% render orp-service', product_form_id: product_form_id, orp_product: p %}
                 {% endif %}
               {% endfor %}
-            {% when 'assistant' %}
-              {%- if product.metafields.custom.assistant != blank -%}
-                {% render 'design-assistant', product_form_id: product_form_id %}
-              {% endif %}
 
             {%- when 'description' -%}
               {%- if product.description != blank -%}
