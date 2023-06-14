@@ -31,6 +31,12 @@
             "picker_type": "button"
           }
         },
+        "orp": {
+          "type": "orp",
+          "settings": {
+            "id": "sdsdsddsd"
+          }
+        },
         "product_style_option": {
           "type": "product_style_option",
           "settings": {
