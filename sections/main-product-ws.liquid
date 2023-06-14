@@ -394,7 +394,7 @@
               </fieldset>
             {% when 'orp' %}
               {% for p in product.metafields.custom.orp.value %}
-                {{ p.sku }}
+                {{ p }}
               {% endfor %}
             {% when 'assistant' %}
               {%- if product.metafields.custom.assistant != blank -%}
