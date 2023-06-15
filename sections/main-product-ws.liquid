@@ -358,7 +358,7 @@
                 -%}
               </div>
 
-              {% for p in product.metafields.custom.orp %}
+              {% for p in product.metafields.custom.orp.value %}
                 <div>
                   {%- render 'price', product: p, use_variant: true, show_badges: true, price_class: 'price--large' -%}
                 </div>
