@@ -634,7 +634,17 @@
               </noscript>
 
             {%- when 'buy_buttons' -%}
-              <div {{ block.shopify_attributes }}>
+              <div
+                x-data="
+                  {
+                  qty: 1,
+                  addToCart(){
+                  let formData = new FormData();
+                  console.log('adding to cart');
+                  }
+                  }
+                "
+              >
                 <product-form class="product-form">
                   <div class="product-form__error-message-wrapper" role="alert" hidden>
                     <svg
@@ -676,8 +686,9 @@
 
                     <div class="product-form__buttons">
                       <button
-                        type="submit"
+                        type="button"
                         name="add"
+                        @click="addToCart()"
                         class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                         {% if product.selected_or_first_available_variant.available == false %}
                           disabled
