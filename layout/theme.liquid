@@ -12,9 +12,6 @@
       crossorigin
     >
 
-    <!-- alpine -->
-    <script src="//unpkg.com/alpinejs" defer></script>
-
     <!-- bootstrap v5.0.2 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -474,6 +471,7 @@
       
       
       
+      
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
         cart_add_url: '{{ routes.cart_add_url }}',
@@ -501,6 +499,7 @@
         pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`
       }
+
 
 
 
