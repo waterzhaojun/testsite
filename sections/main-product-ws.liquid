@@ -635,7 +635,16 @@
               </noscript>
 
             {%- when 'buy_buttons' -%}
-              <div {{ block.shopify_attributes }}>
+              <div
+                {{ block.shopify_attributes }}
+                x-data="
+                  {
+                  addToCart(){
+                  console.log('ahaha');
+                  }
+                  }
+                "
+              >
                 <product-form class="product-form">
                   <div class="product-form__error-message-wrapper" role="alert" hidden>
                     <svg
