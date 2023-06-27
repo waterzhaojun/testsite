@@ -708,6 +708,21 @@
                       name="id"
                       value="{{ product.selected_or_first_available_variant.id }}"
                     >
+                  {%- endform -%}
+                  {%- form 'product',
+                    product,
+                    id: product_form_id,
+                    class: 'form',
+                    novalidate: 'novalidate',
+                    data-type: 'add-to-cart-form',
+                    x-ref: 'product_form'
+                  -%}
+                    <input
+                      id="main_product_hhh"
+                      type="hidden"
+                      name="id"
+                      value="{{ product.selected_or_first_available_variant.id }}"
+                    >
 
                     <div class="product-form__buttons">
                       <button
