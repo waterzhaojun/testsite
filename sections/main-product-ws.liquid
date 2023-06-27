@@ -641,7 +641,6 @@
                   {
                   addToCart(){
                       let formData = new FormData($refs.product_form);
-                      formData.properties['extra'] = 'a';
                       fetch('/cart/add.js', {
                         method: 'POST',
                         body: formData})
