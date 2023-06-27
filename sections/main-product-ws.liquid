@@ -640,7 +640,7 @@
                 x-data="
                   {
                   addToCart(){
-                    let formData = new FormData($refs.product_form);
+                      let formData = new FormData($refs.product_form);
                       fetch('/cart/add.js', {
                         method: 'POST',
                         body: formData})
