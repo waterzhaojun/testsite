@@ -664,6 +664,13 @@
                       value="{{ product.selected_or_first_available_variant.id }}"
                       disabled
                     >
+                    {% for p in product.metafields.custom.orp.value %}
+                      <input
+                        type="hidden"
+                        name="id"
+                        value="{{ p.id }}"
+                      >
+                    {% endfor %}
 
                     <div class="product-form__buttons">
                       <button
