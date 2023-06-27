@@ -27,6 +27,7 @@
   {%- endstyle -%}
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
 
   {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
   {%- if first_3d_model -%}
@@ -870,7 +871,6 @@
     <script src="{{ 'product-model.js' | asset_url }}" defer></script>
   {%- endif -%}
 
-  <script src="//unpkg.com/alpinejs" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       function isIE() {
