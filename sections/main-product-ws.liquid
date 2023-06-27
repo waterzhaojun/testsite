@@ -638,17 +638,17 @@
               <div
                 {{ block.shopify_attributes }}
                 x-data="
-                        {
-                        addToCart(){
-                            let formData = new FormData($refs.product_form);
-                            fetch('/cart/add.js', {
-                              method: 'POST',
-                              body: formData})
-                            .then(response => {return response.json();})
-                            .then(response => {console.log(response);})
-                            .catch((error) => {console.error('Error:', error)});
-                          }
-                        }
+                  {
+                  addToCart(){
+                      let formData = new FormData($refs.product_form);
+                      fetch('/cart/add.js', {
+                        method: 'POST',
+                        body: formData})
+                      .then(response => {return response.json();})
+                      .then(response => {console.log(response);})
+                      .catch((error) => {console.error('Error:', error)});
+                    }
+                  }
                   addToCart2(){
                       let formData = new FormData($refs.product_form);
                       fetch('/cart/add.js', {
