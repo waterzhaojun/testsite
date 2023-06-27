@@ -651,9 +651,19 @@
                   addToCart2(){
                     let tmp = $(main_product_hhh).attr('value');
                     console.log(tmp);
-                    Shopify.cart.addVariants([
-                      {variant: tmp, quantity: 1}
-                    ]);
+                    fetch('/cart/add.js', {
+                      method: 'POST',
+                      body: {
+                        items: [
+                          {
+                            quantity: 1,
+                            id: tmp
+                          }
+                        ]
+                      })
+                    .then(response => {return response.json();})
+                    .then(response => {console.log(response);})
+                    .catch((error) => {console.error('Error:', error)});
                   },
                   }
                 "
