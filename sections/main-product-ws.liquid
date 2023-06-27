@@ -650,7 +650,7 @@
                     .catch((error) => {console.error('Error:', error)});
                   },
                   addToCart3(){
-                    let formData = new FormData($refs.product_form);
+                    let formData = new FormData($refs.product_form_1);
                     fetch('/cart/add.js', {
                       method: 'POST',
                       body: formData})
