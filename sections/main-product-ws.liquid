@@ -649,7 +649,7 @@
                     .catch((error) => {console.error('Error:', error)});
                   },
                   addToCart2(){
-                    console.log($('main_product'));
+                    console.log($('main_product_hhh'));
                   },
                   }
                 "
@@ -679,7 +679,7 @@
                     x-ref: 'product_form'
                   -%}
                     <input
-                      id="main_product"
+                      id="main_product_hhh"
                       type="hidden"
                       name="id"
                       value="{{ product.selected_or_first_available_variant.id }}"
