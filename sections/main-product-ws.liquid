@@ -717,7 +717,6 @@
                       type="hidden"
                       name="id"
                       value="43789039108339"
-                      disable
                     >
                   {%- endform -%}
                   {%- form 'product',
@@ -1035,7 +1034,11 @@
       radioInputs.forEach(radio => radio.addEventListener('change', ()=>setStyleMedia(radio.value)));
 
       // Set default style
-      setStyleMedia(radioInputs[0].value)
+      setStyleMedia(radioInputs[0].value);
+
+      // Add listener for extra products
+      let extraProductInput = document.querySelector('input[id="aaaaaaa"]');
+      extraProductInput.addEventListener('checked', ()=>{$(main_product_hhh).disabled=true})
     });
   </script>
 </section>
