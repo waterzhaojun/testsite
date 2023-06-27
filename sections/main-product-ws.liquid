@@ -650,13 +650,7 @@
                     }
                   }
                   addToCart2(){
-                      let formData = new FormData($refs.product_form);
-                      fetch('/cart/add.js', {
-                        method: 'POST',
-                        body: formData})
-                      .then(response => {return response.json();})
-                      .then(response => {console.log(response);})
-                      .catch((error) => {console.error('Error:', error)});
+                      console.log('hahaha');
                     }
                   }
                 "
@@ -695,7 +689,7 @@
                       <button
                         id="ProductSubmitButton-{{ section_id }}"
                         type="button"
-                        @click="addToCart()"
+                        @click="addToCart2()"
                         name="add"
                         class="add-to-cart-button product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
                         {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
