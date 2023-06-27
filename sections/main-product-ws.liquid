@@ -640,19 +640,18 @@
                 x-data="
                   {
                   addToCart(){
-                      let formData = new FormData($refs.product_form);
-                      fetch('/cart/add.js', {
-                        method: 'POST',
-                        body: formData})
-                      .then(response => {return response.json();})
-                      .then(response => {console.log(response);})
-                      .catch((error) => {console.error('Error:', error)});
-                    }
+                    let formData = new FormData($refs.product_form);
+                    fetch('/cart/add.js', {
+                      method: 'POST',
+                      body: formData})
+                    .then(response => {return response.json();})
+                    .then(response => {console.log(response);})
+                    .catch((error) => {console.error('Error:', error)});
                   },
                   addToCart2(){
-                      console.log('hahaha');
-                    }
+                    console.log('hahaha');
                   },
+                  }
                 "
               >
                 <product-form class="product-form">
