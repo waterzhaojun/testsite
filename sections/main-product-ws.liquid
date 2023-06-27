@@ -404,7 +404,11 @@
                   %}
                 {% endif %}
                 {% if p.type == 'FM' %}
-                  {% render 'orp-frame', product_form_id: product_form_id, orp_product: p %}
+                  {% render 'orp-frame',
+                    product_id: p.selected_or_first_available_variant.id,
+                    product_form_id: product_form_id,
+                    orp_product: p
+                  %}
                 {% endif %}
               {% endfor %}
 
