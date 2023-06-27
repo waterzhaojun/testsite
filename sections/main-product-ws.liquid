@@ -350,7 +350,6 @@
                 </a>
               </div>
             {%- when 'price' -%}
-              {{ Shopify }}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
                   product: product,
@@ -653,7 +652,7 @@
                   addToCart2(){
                     let tmp = $(main_product_hhh).attr('value');
                     console.log(tmp);
-                    fetch('/cart/add.js', {
+                    fetch(window.Shopify.routes.root +'/cart/add.js', {
                       method: 'POST',
                       body: {
                         items: [
