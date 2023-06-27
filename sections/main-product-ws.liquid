@@ -350,6 +350,7 @@
                 </a>
               </div>
             {%- when 'price' -%}
+              {{ Shopify }}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
                   product: product,
