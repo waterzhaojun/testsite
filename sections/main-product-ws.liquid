@@ -649,6 +649,15 @@
                     .then(response => {console.log(response);})
                     .catch((error) => {console.error('Error:', error)});
                   },
+                  addToCart3(){
+                    let formData = new FormData($refs.product_form);
+                    fetch('/cart/add.js', {
+                      method: 'POST',
+                      body: formData})
+                    .then(response => {return response.json();})
+                    .then(response => {console.log(response);})
+                    .catch((error) => {console.error('Error:', error)});
+                  },
                   addToCart2(){
                     let tmp = $(main_product_hhh).attr('value');
                     console.log(tmp);
