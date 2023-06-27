@@ -651,6 +651,9 @@
                   addToCart2(){
                     let tmp = $(main_product_hhh).attr('value');
                     console.log(tmp);
+                    Shopify.cart.addVariants([
+                      {variant: tmp, quantity: 1}
+                    ]);
                   },
                   }
                 "
