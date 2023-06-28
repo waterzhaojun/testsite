@@ -648,13 +648,10 @@
                 {{ block.shopify_attributes }}
                 x-data="
                   {
-                  addToCart(){
-                    addToCartByFormId('{{ product_form_id }}');
-                    console.log({{ product.metafields.custom.orp.value }});
-                  },
-                  addToCart4(){
-                    console.log($('#aaaaaaa').is(':checked'));
-                  },
+                    addToCart(){
+                      addToCartByFormId('{{ product_form_id }}');
+                      console.log({{ product.metafields.custom.orp.value }});
+                    },
                   }
                 "
               >
