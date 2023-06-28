@@ -676,7 +676,7 @@
                   },
                   addToCart2(){
 
-                    console.log({{ product_form_id }})
+                    console.log({{ product_form_id }});
                   },
                   }
                 "
@@ -731,7 +731,7 @@
                       <button
                         id="ProductSubmitButton-{{ section_id }}"
                         type="button"
-                        @click="addToCart4()"
+                        @click="addToCart2()"
                         name="add"
                         class="add-to-cart-button product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
                         {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
