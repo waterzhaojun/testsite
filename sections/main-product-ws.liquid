@@ -651,13 +651,13 @@
                   addToCart(){
                     let mainProductForm = document.getElementById('{{ product_form_id }}');
                     let formData = new FormData(mainProductForm);
-                    console.log(formData);
-
                     fetch('/cart/add.js', {
                       method: 'POST',
                       body: formData})
                     .then(response => {console.log(response);})
                     .catch((error) => {console.error('Error:', error)});
+
+
                   },
                   addToCart4(){
                     console.log($('#aaaaaaa').is(':checked'));
