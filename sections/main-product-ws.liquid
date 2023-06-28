@@ -653,12 +653,12 @@
                       orp_inputs.forEach((item)=>{
                         if(item.checked){
                           console.log(item.form);
-                          addToCartByFormId(item.form);
+                          addToCartByFormOrFormid(item.form);
                         }
                       })
                     },
                     addToCart2(){
-                      addToCartByFormId('{{ product_form_id }}');
+                      addToCartByFormOrFormid('{{ product_form_id }}');
                     },
                   }
                 "
@@ -976,7 +976,7 @@
     }
   </script>
   <script>
-    function addToCartByFormId(form_or_formid) {
+    function addToCartByFormOrFormid(form_or_formid) {
       let productForm = (typeof form_or_formid === string) ? document.getElementById(form_or_formid)} : form_or_formid;
       let formData = new FormData(productForm);
       fetch('/cart/add.js', {method: 'POST', body: formData})
