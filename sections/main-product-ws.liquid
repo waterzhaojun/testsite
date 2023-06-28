@@ -404,10 +404,9 @@
                   %}
                 {% endif %}
                 {% if p.type == 'FM' %}
-                  {%
-                    render 'orp-frame',
+                  {% render 'orp-frame',
                     product_id: p.selected_or_first_available_variant.id,
-                    form_id: {{ 'form_' | append: p.selected_or_first_available_variant.id }},
+                    form_id: p.id,
                     orp_product: p
                   %}
                 {% endif %}
@@ -679,10 +678,9 @@
                     <span class="product-form__error-message"></span>
                   </div>
                   {% for p in product.metafields.custom.orp.value %}
-                    {%-
-                      form 'product',
+                    {%- form 'product',
                       product,
-                      id: {{ 'form_' | append: p.id }},
+                      id: p.id,
                       class: 'form',
                       novalidate: 'novalidate',
                       data-type: 'add-to-cart-form'
