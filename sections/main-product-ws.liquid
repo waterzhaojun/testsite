@@ -714,7 +714,7 @@
                       <button
                         id="ProductSubmitButton-{{ section_id }}"
                         type="button"
-                        @click="addToCart2()"
+                        @click="addToCart()"
                         name="add"
                         class="add-to-cart-button product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
                         {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
@@ -977,7 +977,7 @@
   </script>
   <script>
     function addToCartByFormOrFormid(form_or_formid) {
-      const productForm = (typeof form_or_formid === 'string') ? document.getElementById(form_or_formid) : form_or_formid;
+      let productForm = (typeof form_or_formid === 'string') ? document.getElementById(form_or_formid) : form_or_formid;
       console.log(productForm);
       let formData = new FormData(productForm);
       fetch('/cart/add.js', {method: 'POST', body: formData})
