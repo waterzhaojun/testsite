@@ -397,16 +397,18 @@
             {% when 'orp' %}
               {% for p in product.metafields.custom.orp.value %}
                 {% if p.type == 'SV' %}
-                  {% render 'orp-service',
+                  {%
+                    render 'orp-service',
                     product_id: p.selected_or_first_available_variant.id,
-                    product_form_id: product_form_id,
+                    product_form_id: {{ 'form_' | append: p.id }},
                     orp_product: p
                   %}
                 {% endif %}
                 {% if p.type == 'FM' %}
-                  {% render 'orp-frame',
+                  {%
+                    render 'orp-frame',
                     product_id: p.selected_or_first_available_variant.id,
-                    product_form_id: product_form_id,
+                    product_form_id: {{ 'form_' | append: p.id }},
                     orp_product: p
                   %}
                 {% endif %}
@@ -653,7 +655,7 @@
                       let orp_inputs = document.getElementsByClassName('orp-flag');
                       orp_inputs.forEach((item)=>{
                         if(item.checked){
-                          console.log(
+                          console.log(item.form);
                         }
                       })
                     },
