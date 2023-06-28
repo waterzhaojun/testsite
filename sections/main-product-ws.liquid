@@ -649,11 +649,16 @@
                 x-data="
                   {
                   addToCart(){
+                    let formData = new FormData($('#'));
+                    fetch('/cart/add.js', {
+                      method: 'POST',
+                      body: formData})
+                    .then(response => {console.log(response);})
+                    .catch((error) => {console.error('Error:', error)});
                     let formData = new FormData($refs.product_form);
                     fetch('/cart/add.js', {
                       method: 'POST',
                       body: formData})
-                    .then(response => {return response.json();})
                     .then(response => {console.log(response);})
                     .catch((error) => {console.error('Error:', error)});
                   },
@@ -670,21 +675,8 @@
                     .catch((error) => {console.error('Error:', error)});
                   },
                   addToCart2(){
-                    let tmp = $(main_product_hhh).attr('value');
-                    console.log(tmp);
-                    fetch(window.Shopify.routes.root +'cart/add.js', {
-                      method: 'POST',
-                      body: JSON.stringify({
-                        items: [
-                          {
-                            quantity: 1,
-                            id: 43789039108339
-                          }
-                        ]
-                      })})
-                    .then(response => {return response.json();})
-                    .then(response => {console.log(response);})
-                    .catch((error) => {console.error('Error:', error)});
+
+                    console.log({{ product_form_id }})
                   },
                   }
                 "
@@ -707,7 +699,7 @@
                   </div>
                   {%- form 'product',
                     product,
-                    id: 'sdfssssddddd',
+                    id: 'orp_form_',
                     class: 'form',
                     novalidate: 'novalidate',
                     data-type: 'add-to-cart-form',
