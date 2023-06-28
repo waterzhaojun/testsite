@@ -686,7 +686,7 @@
                       data-type: 'add-to-cart-form'
                     -%}
                       <input
-                        id="main_product_hhh"
+                        id="{{ 'form_input_' | append: p.id }}"
                         type="hidden"
                         name="id"
                         value="{{ p.id }}"
