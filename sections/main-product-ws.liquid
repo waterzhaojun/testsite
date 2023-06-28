@@ -656,8 +656,6 @@
                       body: formData})
                     .then(response => {console.log(response);})
                     .catch((error) => {console.error('Error:', error)});
-
-
                   },
                   addToCart4(){
                     console.log($('#aaaaaaa').is(':checked'));
@@ -989,6 +987,14 @@
     }
   </script>
   <script>
+    function addToCartByFormId(formid) {
+      let productForm = document.getElementById(formid);
+      let formData = new FormData(productForm);
+      fetch('/cart/add.js', {method: 'POST', body: formData})
+      .then(response => {console.log(response);})
+      .catch((error) => {console.error('Error:', error)});
+    }
+
     function setStyleMedia(sku) {
         document.querySelectorAll('.style-img').forEach(function(x) {
           x.hidden="hidden";
