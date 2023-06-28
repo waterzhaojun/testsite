@@ -651,12 +651,6 @@
                   addToCart(){
                     let formid = '#{{ product_form_id }}';
                     console.log(formid);
-                    let formData = new FormData($({{ '#' | append: product_form_id }}));
-                    fetch('/cart/add.js', {
-                      method: 'POST',
-                      body: formData})
-                    .then(response => {console.log(response);})
-                    .catch((error) => {console.error('Error:', error)});
                   },
                   addToCart4(){
                     console.log($('#aaaaaaa').is(':checked'));
