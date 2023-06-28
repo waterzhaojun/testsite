@@ -649,7 +649,7 @@
                 x-data="
                   {
                   addToCart(){
-                    let formData = new FormData($('#{{ product_form_id }}'));
+                    let formData = new FormData($({{ '#' | append: product_form_id }}));
                     fetch('/cart/add.js', {
                       method: 'POST',
                       body: formData})
