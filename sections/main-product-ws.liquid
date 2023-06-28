@@ -649,7 +649,6 @@
                 x-data="
                   {
                     addToCart(){
-                      addToCartByFormId('{{ product_form_id }}');
                       let orp_inputs = document.getElementsByClassName('orp-flag');
                       orp_inputs.forEach((item)=>{
                         if(item.checked){
@@ -657,6 +656,9 @@
                           console.log(item.form);
                         }
                       })
+                    },
+                    addToCart2(){
+                      addToCartByFormId('{{ product_form_id }}');
                     },
                   }
                 "
