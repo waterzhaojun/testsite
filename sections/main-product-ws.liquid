@@ -649,8 +649,10 @@
                 x-data="
                   {
                   addToCart(){
-                    let formData = new FormData(document.getElementById('#{{ product_form_id }}'));
+                    let mainProductForm = document.getElementById('#{{ product_form_id }}');
+                    let formData = new FormData(mainProductForm);
                     console.log(formData);
+                    console.log(mainProductForm);
                     fetch('/cart/add.js', {
                       method: 'POST',
                       body: formData})
