@@ -650,21 +650,10 @@
                   {
                   addToCart(){
                     addToCartByFormId('{{ product_form_id }}');
+                    {{ product.metafields.custom.orp.value }}.forEach((item)=>{console.log(item);});
                   },
                   addToCart4(){
                     console.log($('#aaaaaaa').is(':checked'));
-                  },
-                  addToCart3(){
-                    let formData = new FormData($refs.product_form_1);
-                    fetch('/cart/add.js', {
-                      method: 'POST',
-                      body: formData})
-                    .then(response => {return response.json();})
-                    .then(response => {console.log(response);})
-                    .catch((error) => {console.error('Error:', error)});
-                  },
-                  addToCart2(){
-                    console.log('{{ product_form_id }}');
                   },
                   }
                 "
