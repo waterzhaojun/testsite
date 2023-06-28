@@ -650,9 +650,8 @@
                   {
                   addToCart(){
                     let formData = new FormData($('#{{ product_form_id }}').get()[0]);
-                    let formid = '#{{ product_form_id }}';
                     console.log($refs.product_form_1);
-                    console.log($(formid).get()[0]);
+                    console.log(formData);
                     fetch('/cart/add.js', {
                       method: 'POST',
                       body: $(formid).get()[0]})
