@@ -649,7 +649,7 @@
                 x-data="
                   {
                     addToCart(){
-                      let orp_inputs = documents.getElementsByClassName('orp-flag');
+                      let orp_inputs = document.getElementsByClassName('orp-flag');
                       console.log(orp_inputs);
                       addToCartByFormId('{{ product_form_id }}');
                       console.log({{ product.metafields.custom.orp.value }});
