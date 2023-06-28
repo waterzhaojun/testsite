@@ -683,14 +683,13 @@
                       id: {{ 'form_' | append: p.id }},
                       class: 'form',
                       novalidate: 'novalidate',
-                      data-type: 'add-to-cart-form',
-                      x-ref: 'product_form_1'
+                      data-type: 'add-to-cart-form'
                     -%}
                       <input
                         id="main_product_hhh"
                         type="hidden"
                         name="id"
-                        value="43789039108339"
+                        value="{{ p.id }}"
                       >
                     {%- endform -%}
                   {% endfor %}
