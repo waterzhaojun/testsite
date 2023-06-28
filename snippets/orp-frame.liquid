@@ -7,7 +7,7 @@
     form="{{ product_form_id }}"
     name="properties[Frame]"
   >
-  <label class="form-check-label" for="aaaaaaa">
+  <label class="form-check-label" for="{{ "orp_" | append: product_id }}">
     Check here if you need a proof before print (
     {{- orp_product.price | money -}}
     )
