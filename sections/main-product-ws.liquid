@@ -649,13 +649,7 @@
                 x-data="
                   {
                   addToCart(){
-                    let mainProductForm = document.getElementById('{{ product_form_id }}');
-                    let formData = new FormData(mainProductForm);
-                    fetch('/cart/add.js', {
-                      method: 'POST',
-                      body: formData})
-                    .then(response => {console.log(response);})
-                    .catch((error) => {console.error('Error:', error)});
+                    addToCartByFormId('{{ product_form_id }}');
                   },
                   addToCart4(){
                     console.log($('#aaaaaaa').is(':checked'));
