@@ -650,11 +650,10 @@
                 x-data="
                   {
                     addToCart(){
+                      addToCartByFormOrFormid('{{ product_form_id }}');
                       let orp_inputs = document.getElementsByClassName('orp-flag');
                       orp_inputs.forEach((item)=>{
                         if(item.checked){
-                          console.log(item);
-                          console.log(item.form);
                           addToCartByFormOrFormid(item.form);
                         }
                       })
