@@ -693,7 +693,7 @@
                         id="{{ 'form_input_' | append: p.id }}"
                         type="hidden"
                         name="id"
-                        value="{{ p.selected_or_first_available_variant }}"
+                        value="{{ p.selected_or_first_available_variant.id }}"
                       >
                     {%- endform -%}
                   {% endfor %}
