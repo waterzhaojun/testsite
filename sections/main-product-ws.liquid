@@ -722,6 +722,9 @@
                           disabled
                         {% endif %}
                       >
+                        <span class="secondary-text" aria-hidden="true" data-cart-secondary-submit-text>
+                          {{- products.product.view_cart | t -}}
+                        </span>
                         <span>
                           {%- if product.selected_or_first_available_variant.available -%}
                             {{ 'products.product.add_to_cart' | t }}
