@@ -396,8 +396,8 @@
               </fieldset>
             {% when 'orp' %}
               {% for p in product.metafields.custom.orp.value %}
+                {% assign form_p_id = 'orp_form_' | append: p.id %}
                 {% if p.type == 'SV' %}
-                  {% assign form_p_id = 'form_' | append: p.id %}
                   {% render 'orp-service',
                     product_id: p.selected_or_first_available_variant.id,
                     form_id: form_p_id,
