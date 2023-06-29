@@ -407,7 +407,7 @@
                 {% if p.type == 'FM' %}
                   {% render 'orp-frame',
                     product_id: p.selected_or_first_available_variant.id,
-                    form_id: p.id,
+                    form_id: form_p_id,
                     orp_product: p
                   %}
                 {% endif %}
@@ -693,7 +693,7 @@
                         id="{{ 'form_input_' | append: p.id }}"
                         type="hidden"
                         name="id"
-                        value="{{ p.id }}"
+                        value="{{ 'orp_form_' | append: p.id }}"
                       >
                     {%- endform -%}
                   {% endfor %}
