@@ -693,7 +693,7 @@
                         id="{{ 'form_input_' | append: p.id }}"
                         type="hidden"
                         name="id"
-                        value="{{ 'orp_form_' | append: p.id }}"
+                        value="{{ p.selected_or_first_available_variant }}"
                       >
                     {%- endform -%}
                   {% endfor %}
@@ -705,7 +705,7 @@
                     data-type: 'add-to-cart-form'
                   -%}
                     <input
-                      id="main_product_hhh"
+                      id="main_product"
                       type="hidden"
                       name="id"
                       value="{{ product.selected_or_first_available_variant.id }}"
