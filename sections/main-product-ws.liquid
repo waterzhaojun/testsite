@@ -680,9 +680,10 @@
                     <span class="product-form__error-message"></span>
                   </div>
                   {% for p in product.metafields.custom.orp.value %}
-                    {%- form 'product',
+                    {%-
+                      form 'product',
                       product,
-                      id: p.id,
+                      id: {{ 'form_' | append: p.id }},
                       class: 'form',
                       novalidate: 'novalidate',
                       data-type: 'add-to-cart-form'
