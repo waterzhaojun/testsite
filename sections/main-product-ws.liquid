@@ -321,6 +321,7 @@
 
             {%- when 'ws_custom_info' -%}
               {% render 'ws-custom-info-wedding', product_form_id: product_form_id %}
+            
             {%- when 'popup' -%}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"
@@ -616,6 +617,10 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "ws_custom_info",
+      "name": "WS custom info"
     },
     {
       "type": "orp",
