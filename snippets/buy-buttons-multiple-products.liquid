@@ -12,7 +12,22 @@
 {% endcomment %}
 <script src="//unpkg.com/alpinejs" defer></script>
 
-<div {{ block.shopify_attributes }}>
+<div
+  {{ block.shopify_attributes }}
+  x-data="
+    {
+      addToCart(){
+        addToCartByFormOrFormid('{{ product_form_id }}');
+        let orp_inputs = document.getElementsByClassName('orp-flag');
+        orp_inputs.forEach((item)=>{
+          if(item.checked){
+            addToCartByFormOrFormid(item.form);
+          }
+        })
+      },
+    }
+  "
+>
   {%- if product != blank -%}
     {%- liquid
       assign gift_card_recipient_feature_active = false
