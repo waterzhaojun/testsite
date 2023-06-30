@@ -10,7 +10,25 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
-<div {{ block.shopify_attributes }}>
+<div
+  {{ block.shopify_attributes }}
+  x-data="
+    {
+      addToCart(){
+        addToCartByFormOrFormid('{{ product_form_id }}');
+        let orp_inputs = document.getElementsByClassName('orp-flag');
+        orp_inputs.forEach((item)=>{
+          if(item.checked){
+            addToCartByFormOrFormid(item.form);
+          }
+        })
+      },
+      addToCart2(){
+        addToCartByFormOrFormid('{{ product_form_id }}');
+      },
+    }
+  "
+>
   {%- if product != blank -%}
     {%- liquid
       assign gift_card_recipient_feature_active = false
