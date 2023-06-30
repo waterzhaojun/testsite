@@ -57,6 +57,18 @@
         <span class="product-form__error-message"></span>
       </div>
 
+      {% for p in product.metafields.custom.orp.value %}
+        {% assign p_form_id = 'orp_form_' | append: p.id %}
+        {%- form 'product', p, id: p_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          <input
+            id="{{ 'form_input_' | append: p.id }}"
+            type="hidden"
+            name="id"
+            value="{{ p.selected_or_first_available_variant.id }}"
+          >
+        {%- endform -%}
+      {% endfor %}
+
       {%- form 'product',
         product,
         id: product_form_id,
