@@ -60,13 +60,7 @@
 
       {% for p in product.metafields.custom.orp.value %}
         {% assign p_form_id = 'orp_form_' | append: p.id %}
-        {%- form 'product',
-          product,
-          id: p_form_id,
-          class: 'form',
-          novalidate: 'novalidate',
-          data-type: 'add-to-cart-form'
-        -%}
+        {%- form 'product', p, id: p_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
           <input
             id="{{ 'form_input_' | append: p.id }}"
             type="hidden"
@@ -108,9 +102,8 @@
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
-            @click="addToCart()"
             name="add"
-            class="add-to-cart-button product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
@@ -144,10 +137,9 @@
     <div class="product-form">
       <div class="product-form__buttons form">
         <button
-          type="button"
-          @click="addToCart()"
+          type="submit"
           name="add"
-          class="add-to-cart-button product-form__submit button button--full-width button--primary"
+          class="product-form__submit button button--full-width button--primary"
           disabled
         >
           {{ 'products.product.sold_out' | t }}
