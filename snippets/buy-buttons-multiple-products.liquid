@@ -10,25 +10,7 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
-
-<script src="//unpkg.com/alpinejs" defer></script>
-
-<div
-  {{ block.shopify_attributes }}
-  x-data="
-    {
-      addToCart(){
-        addToCartByFormOrFormid('{{ product_form_id }}');
-        let orp_inputs = document.getElementsByClassName('orp-flag');
-        orp_inputs.forEach((item)=>{
-          if(item.checked){
-            addToCartByFormOrFormid(item.form);
-          }
-        })
-      },
-    }
-  "
->
+<div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
       assign gift_card_recipient_feature_active = false
@@ -57,18 +39,6 @@
         </svg>
         <span class="product-form__error-message"></span>
       </div>
-
-      {% for p in product.metafields.custom.orp.value %}
-        {% assign p_form_id = 'orp_form_' | append: p.id %}
-        {%- form 'product', p, id: p_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-          <input
-            id="{{ 'form_input_' | append: p.id }}"
-            type="hidden"
-            name="id"
-            value="{{ p.selected_or_first_available_variant.id }}"
-          >
-        {%- endform -%}
-      {% endfor %}
 
       {%- form 'product',
         product,
@@ -179,14 +149,4 @@
 
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
-  <script>
-    function addToCartByFormOrFormid(form_or_formid) {
-      let productForm = (typeof form_or_formid === 'string') ? document.getElementById(form_or_formid) : form_or_formid;
-      console.log(productForm);
-      let formData = new FormData(productForm);
-      fetch('/cart/add.js', {method: 'POST', body: formData})
-      .then(response => {console.log(response);})
-      .catch((error) => {console.error('Error:', error)});
-    }
-  </script>
 </div>
