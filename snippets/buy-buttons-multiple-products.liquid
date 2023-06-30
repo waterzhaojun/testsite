@@ -57,13 +57,7 @@
 
       {% for p in product.metafields.custom.orp.value %}
         {% assign p_form_id = 'orp_form_' | append: p.id %}
-        {%- form 'product',
-          product,
-          id: p_form_id,
-          class: 'form',
-          novalidate: 'novalidate',
-          data-type: 'add-to-cart-form'
-        -%}
+        {%- form 'product', p, id: p_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
           <input
             id="{{ 'form_input_' | append: p.id }}"
             type="hidden"
