@@ -850,15 +850,6 @@
     }
   </script>
   <script>
-    function addToCartByFormOrFormid(form_or_formid) {
-      let productForm = (typeof form_or_formid === 'string') ? document.getElementById(form_or_formid) : form_or_formid;
-      console.log(productForm);
-      let formData = new FormData(productForm);
-      fetch('/cart/add.js', {method: 'POST', body: formData})
-      .then(response => {console.log(response);})
-      .catch((error) => {console.error('Error:', error)});
-    }
-
     function setStyleMedia(sku) {
         document.querySelectorAll('.style-img').forEach(function(x) {
           x.hidden="hidden";
