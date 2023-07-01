@@ -34,12 +34,12 @@ if (!customElements.get('product-form')) {
         formData.append('sections_url', window.location.pathname);
         this.cart.setActiveElement(document.activeElement);
       }
-      config.body ={
+      config.body =JSON.stringify({
        'items': [{
         'id': 43725268779251,
         'quantity': 5
         }]
-      };
+      });
       console.log(config)
       for (const pair of formData.entries()) {
         console.log(`${pair[0]}, ${pair[1]}`);
