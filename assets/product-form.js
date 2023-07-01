@@ -28,20 +28,13 @@ if (!customElements.get('product-form')) {
       delete config.headers['Content-Type'];
 
       const formData = new FormData(this.form);
-      console.log(formData);
-      console.log(JSON.stringify(formData));
       
       if (this.cart) {
         formData.append('sections', this.cart.getSectionsToRender().map((section) => section.id));
         formData.append('sections_url', window.location.pathname);
         this.cart.setActiveElement(document.activeElement);
       }
-      config.body =JSON.stringify({
-       'items': [{
-        'id': 43725268779251,
-        'quantity': 5
-        }]
-      });
+      config.body = formData;
       console.log(config)
       for (const pair of formData.entries()) {
         console.log(`${pair[0]}, ${pair[1]}`);
