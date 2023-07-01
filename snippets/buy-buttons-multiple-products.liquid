@@ -71,14 +71,6 @@
           disabled
           class="product-variant-id"
         >
-        {% for p in product.metafields.custom.orp.value %}
-          <input
-            id="{{ 'form_input_' | append: p.id }}"
-            type="hidden"
-            name="id"
-            value="{{ p.selected_or_first_available_variant.id }}"
-          >
-        {% endfor %}
 
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
