@@ -35,8 +35,8 @@ if (!customElements.get('product-form')) {
         this.cart.setActiveElement(document.activeElement);
       }
       config.body = formData;
-      for (item of formData) {
-        console.log(item[0], item[1]);
+      for (item of formData.values) {
+        console.log(item);
       };
       fetch(`${routes.cart_add_url}`, config)
         .then((response) => response.json())
