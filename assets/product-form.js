@@ -24,6 +24,7 @@ if (!customElements.get('product-form')) {
       this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
 
       const config = fetchConfig('javascript');
+      console.log(config);
       config.headers['X-Requested-With'] = 'XMLHttpRequest';
       delete config.headers['Content-Type'];
 
