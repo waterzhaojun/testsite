@@ -36,6 +36,7 @@ if (!customElements.get('product-form')) {
       }
       config.body = formData;
       console.log(formData)
+      console.log(formData.entries())
       formData.forEach((x) => {
         console.log(x);
       })
