@@ -28,13 +28,16 @@ if (!customElements.get('product-form')) {
       delete config.headers['Content-Type'];
 
       const formData = new FormData(this.form);
+      for (item of formData) {
+        console.log(item[0], item[1]);
+      };
       if (this.cart) {
         formData.append('sections', this.cart.getSectionsToRender().map((section) => section.id));
         formData.append('sections_url', window.location.pathname);
         this.cart.setActiveElement(document.activeElement);
       }
       config.body = formData;
-      console.log(config.body);
+      
       fetch(`${routes.cart_add_url}`, config)
         .then((response) => response.json())
         .then((response) => {
