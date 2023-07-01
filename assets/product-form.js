@@ -34,14 +34,11 @@ if (!customElements.get('product-form')) {
         formData.append('sections_url', window.location.pathname);
         this.cart.setActiveElement(document.activeElement);
       }
-      config.body = [formData, formData];
+      config.body =formData;
       console.log(formData)
       for (const pair of formData.entries()) {
         console.log(`${pair[0]}, ${pair[1]}`);
       }
-      formData.forEach((x) => {
-        console.log(x);
-      })
       fetch(`${routes.cart_add_url}`, config)
         .then((response) => response.json())
         .then((response) => {
