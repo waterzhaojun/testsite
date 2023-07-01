@@ -42,7 +42,16 @@ if (!customElements.get('product-form')) {
         console.log(`${pair[0]}, ${pair[1]}`);
       }
 
-      
+      fetch(`${routes.cart_add_url}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({'items': [{
+        'id': 43789039108339,
+        'quantity': 2
+        }]})
+      }).then((response) => response.json())
       
       fetch(`${routes.cart_add_url}`, config)
         .then((response) => response.json())
