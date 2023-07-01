@@ -34,6 +34,8 @@ if (!customElements.get('product-form')) {
         formData.append('sections_url', window.location.pathname);
         this.cart.setActiveElement(document.activeElement);
       }
+
+      formData.append('aa', 'bb');
       config.body = formData;
       console.log(config)
       for (const pair of formData.entries()) {
