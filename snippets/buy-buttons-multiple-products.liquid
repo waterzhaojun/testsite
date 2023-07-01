@@ -41,18 +41,6 @@
       endif
     -%}
 
-    {% for p in product.metafields.custom.orp.value %}
-      {% assign p_form_id = 'orp_form_' | append: p.id %}
-      {%- form 'product', p, id: p_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-        <input
-          id="{{ 'form_input_' | append: p.id }}"
-          type="hidden"
-          name="id"
-          value="{{ p.selected_or_first_available_variant.id }}"
-        >
-      {%- endform -%}
-    {% endfor %}
-
     <product-form class="product-form" data-hide-errors="{{ gift_card_recipient_feature_active }}">
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <svg
@@ -83,6 +71,14 @@
           disabled
           class="product-variant-id"
         >
+        {% for p in product.metafields.custom.orp.value %}
+          <input
+            id="{{ 'form_input_' | append: p.id }}"
+            type="hidden"
+            name="id"
+            value="{{ p.selected_or_first_available_variant.id }}"
+          >
+        {% endfor %}
 
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
