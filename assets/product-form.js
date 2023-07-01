@@ -23,7 +23,7 @@ if (!customElements.get('product-form')) {
       this.submitButton.classList.add('loading');
       this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
 
-      const config = fetchConfig('javascript');
+      const config = fetchConfig('json');
       config.headers['X-Requested-With'] = 'XMLHttpRequest';
       delete config.headers['Content-Type'];
 
