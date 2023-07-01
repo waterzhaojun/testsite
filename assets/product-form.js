@@ -40,7 +40,7 @@ if (!customElements.get('product-form')) {
         'quantity': 5
         }]
       };
-      console.log(formData)
+      console.log(config)
       for (const pair of formData.entries()) {
         console.log(`${pair[0]}, ${pair[1]}`);
       }
