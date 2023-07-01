@@ -36,9 +36,9 @@ if (!customElements.get('product-form')) {
       }
       config.body = formData;
       console.log(formData)
-      for (item of formData.entries()) {
-        console.log(item);
-      };
+      formData.forEach((x) => {
+        console.log(x);
+      })
       fetch(`${routes.cart_add_url}`, config)
         .then((response) => response.json())
         .then((response) => {
