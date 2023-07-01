@@ -23,11 +23,12 @@ if (!customElements.get('product-form')) {
       this.submitButton.classList.add('loading');
       this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
 
-      const config = fetchConfig('json');
+      const config = fetchConfig('javascript');
       config.headers['X-Requested-With'] = 'XMLHttpRequest';
       delete config.headers['Content-Type'];
 
       const formData = new FormData(this.form);
+      console.log(JSON.stringify(formData));
       
       if (this.cart) {
         formData.append('sections', this.cart.getSectionsToRender().map((section) => section.id));
