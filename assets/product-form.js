@@ -35,7 +35,8 @@ if (!customElements.get('product-form')) {
         this.cart.setActiveElement(document.activeElement);
       }
       config.body = formData;
-      for (item of formData.values) {
+      console.log(formData)
+      for (item of formData.entries()) {
         console.log(item);
       };
       fetch(`${routes.cart_add_url}`, config)
