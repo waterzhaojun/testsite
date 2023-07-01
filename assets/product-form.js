@@ -34,7 +34,7 @@ if (!customElements.get('product-form')) {
         formData.append('sections_url', window.location.pathname);
         this.cart.setActiveElement(document.activeElement);
       }
-      config.body = formData;
+      config.body = [formData, formData];
       console.log(formData)
       for (const pair of formData.entries()) {
         console.log(`${pair[0]}, ${pair[1]}`);
