@@ -24,8 +24,6 @@ if (!customElements.get('product-form')) {
       this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
 
       const config = fetchConfig('javascript');
-      console.log(config);
-      console.log(`${routes.cart_add_url}`);
       config.headers['X-Requested-With'] = 'XMLHttpRequest';
       delete config.headers['Content-Type'];
 
@@ -36,7 +34,7 @@ if (!customElements.get('product-form')) {
         this.cart.setActiveElement(document.activeElement);
       }
       config.body = formData;
-
+      console.log(config.body);
       fetch(`${routes.cart_add_url}`, config)
         .then((response) => response.json())
         .then((response) => {
