@@ -25,6 +25,7 @@ if (!customElements.get('product-form')) {
 
       const config = fetchConfig('javascript');
       console.log(config);
+      console.log(`${routes.cart_add_url}`);
       config.headers['X-Requested-With'] = 'XMLHttpRequest';
       delete config.headers['Content-Type'];
 
