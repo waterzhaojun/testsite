@@ -50,7 +50,7 @@ if (!customElements.get('product-form')) {
         'id': 43789039108339,
         'quantity': 2
         }]})
-      })//.then((response) => response.json())
+      }).then((response) => console.log(response))
       
       // fetch(`${routes.cart_add_url}`, config)
         // .then((response) => response.json())
