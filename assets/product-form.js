@@ -50,10 +50,10 @@ if (!customElements.get('product-form')) {
         'id': 43789039108339,
         'quantity': 2
         }]})
-      }).then((response) => response.json())
+      })//.then((response) => response.json())
       
       // fetch(`${routes.cart_add_url}`, config)
-        .then((response) => response.json())
+        // .then((response) => response.json())
         .then((response) => {
           if (response.status) {
             publish(PUB_SUB_EVENTS.cartError, {source: 'product-form', productVariantId: formData.get('id'), errors: response.description, message: response.message});
