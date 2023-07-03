@@ -51,7 +51,7 @@
 
 {% for s in styles %}
   {{ s.sku }}
-  {% assign simgs = styles.media.value %}
+  {% assign simgs = s.media.value %}
   {{ simgs }}
   {% for sig in simgs %}
     {{ '===========' }}
