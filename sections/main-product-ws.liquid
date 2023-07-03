@@ -570,6 +570,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const style_ids = '{{ ws_style_ids }}'.split('#');
+      console.log(style_ids)
       for (var i=0;i<style_ids.length-1;i++){
         var tmp = style_ids[i].split('&');
         for(j=1;j<tmp.length;j++) {
