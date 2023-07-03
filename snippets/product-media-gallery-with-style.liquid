@@ -50,7 +50,10 @@
 -%}
 
 {% for s in styles %}
-  {{ s }}
+  {% assign simgs = styles.images.value %}
+  {% for sig in simgs %}
+    {{ sig }}
+  {% endfor %}
 {% endfor %}
 <media-gallery
   id="MediaGallery-{{ section.id }}{{ id_append }}"
