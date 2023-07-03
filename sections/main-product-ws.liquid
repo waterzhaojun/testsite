@@ -556,23 +556,29 @@
     });
   </script>
   {%- liquid
-              assign styles = product.metafields.custom.substyle.value
-              assign ws_style_ids = ''
-              for sty in styles
-                assign ws_style_ids = ws_style_ids | append: sty.sku
-                for st in sty.images.value
-                  assign ws_style_ids = ws_style_ids | append: '&'
-                  assign ws_style_ids = ws_style_ids | append: st.id
-                endfor
-                assign ws_style_ids = ws_style_ids | append: '#'
-              endfor
-      -%}
+    assign styles = product.metafields.custom.substyle.value
+    assign ws_style_ids = ''
+    for sty in styles
+      assign ws_style_ids = ws_style_ids | append: sty.sku
+      for st in sty.images.value
+        assign ws_style_ids = ws_style_ids | append: '&'
+        assign ws_style_ids = ws_style_ids | append: st.id
+      endfor
+      assign ws_style_ids = ws_style_ids | append: '#'
+    endfor
+  -%}
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const styles = {{ product.metafields.custom.substyle.value }};
-      for (var i=0;i<styles.length;i++){
-        var a = styles[i];
-        console.log({{ a.sku }});
+      const style_ids = '{{ ws_style_ids }}'.split('#');
+      for (var i=0;i<style_ids.length-1;i++){
+        var tmp = style_ids[i].split('&');
+        for(j=1;j<tmp.length;j++) {
+          var styleThumb = document.querySelector('li[data-target$="__main-' + tmp[j] + '"]');
+          var stylePresentation = document.querySelector('li[data-media-id$="__main-' + tmp[j] + '"]');
+          styleThumb.classList.add("style-img");
+          styleThumb.classList.add("thumb-" + img.id);
+          stylePresentation.classList.add("presentation-" + img.id);
+        }
       }
 
         //   styles.forEach((sty) => {
