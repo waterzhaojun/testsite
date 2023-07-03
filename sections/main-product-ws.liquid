@@ -558,7 +558,6 @@
       styles.forEach((sty) => {
         sty.media.value.forEach((img) => {
           var styimg = document.querySelector('li[data-target$="' + img.id + '"]');
-          console.log(styimg);
           var stylePresentation = document.querySelector('li[data-media-id$="' + tmp[j] + '"]');
           styleThumb.classList.add("style-img");
           styleThumb.classList.add("thumb-" + img.id);
