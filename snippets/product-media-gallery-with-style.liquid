@@ -49,6 +49,9 @@
   endif
 -%}
 
+{% for s in styles %}
+  {{ s }}
+{% endfor %}
 <media-gallery
   id="MediaGallery-{{ section.id }}{{ id_append }}"
   role="region"
