@@ -576,8 +576,8 @@
           var styleThumb = document.querySelector('li[data-target$="__main-' + tmp[j] + '"]');
           var stylePresentation = document.querySelector('li[data-media-id$="__main-' + tmp[j] + '"]');
           styleThumb.classList.add("style-img");
-          styleThumb.classList.add("thumb-" + img.id);
-          stylePresentation.classList.add("presentation-" + img.id);
+          styleThumb.classList.add("thumb-" + tmp[j]);
+          stylePresentation.classList.add("presentation-" + tmp[j]);
         }
       }
 
