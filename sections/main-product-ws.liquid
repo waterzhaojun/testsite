@@ -555,6 +555,18 @@
       });
     });
   </script>
+  {%- liquid
+              assign styles = product.metafields.custom.substyle.value
+              assign ws_style_ids = ''
+              for sty in styles
+                assign ws_style_ids = ws_style_ids | append: sty.sku
+                for st in sty.images.value
+                  assign ws_style_ids = ws_style_ids | append: '&'
+                  assign ws_style_ids = ws_style_ids | append: st.id
+                endfor
+                assign ws_style_ids = ws_style_ids | append: '#'
+              endfor
+      -%}
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const styles = {{ product.metafields.custom.substyle.value }};
