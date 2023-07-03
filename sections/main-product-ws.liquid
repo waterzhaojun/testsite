@@ -553,6 +553,9 @@
       document.querySelector('#Variants-{{ section.id }}').addEventListener('change', function (event) {
         hiddenInput.value = event.currentTarget.value;
       });
+
+    const styles = {{ product.metafields.custom.substyle.value}};
+      
     });
   </script>
 
