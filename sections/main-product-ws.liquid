@@ -557,7 +557,7 @@
       const styles = {{ product.metafields.custom.substyle.value}};
       styles.forEach((sty) => {
         sty.media.value.forEach((img) => {
-          var styimg = document.querySelector('li[data-target$="' + img.id + '"]');
+          var styimg = document.querySelector('li[data-target$="__main-' + img.id + '"]');
           var stylePresentation = document.querySelector('li[data-media-id$="' + tmp[j] + '"]');
           styleThumb.classList.add("style-img");
           styleThumb.classList.add("thumb-" + img.id);
