@@ -286,7 +286,7 @@
             {% when 'product_style_option' %}
               <div class="form__label">Style</div>
               <fieldset id="ProductOption-{{custom_product_option_title | handleize }}" class="product-form__input">
-                {% for sty in styles %}
+                {% for sty in product.metafields.substyle.value %}
                   <input
                     type="radio"
                     id="{{ sty.sku | handleize }}"
@@ -568,6 +568,19 @@
     endfor
   -%}
   <script>
+    function setStyleMedia(sku) {
+        document.querySelectorAll('.style-img').forEach(function(x) {
+          x.hidden="hidden";
+        });
+        document.querySelectorAll('.thumb-'+sku).forEach(function(x) {
+          x.removeAttribute("hidden");
+        });
+        document.querySelectorAll('.product__media-item').forEach(function(x) {
+          x.classList.remove("is-active");
+        });
+        document.querySelector('.presentation-'+sku).classList.add('is-active');
+    }
+    
     document.addEventListener('DOMContentLoaded', function() {
       const style_ids = '{{ style_ids }}'.split('#');
       console.log(style_ids)
@@ -581,6 +594,11 @@
           stylePresentation.classList.add("presentation-" + tmp[j]);
         }
       }
+      let radioInputs = document.querySelectorAll('input[type=radio][name="ws-style-selector"]');
+      radioInputs.forEach(radio => radio.addEventListener('change', ()=>setStyleMedia(radio.value)));
+
+      // Set default style
+      setStyleMedia(radioInputs[0].value);
     });
   </script>
 
