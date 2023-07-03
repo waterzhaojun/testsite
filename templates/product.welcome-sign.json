@@ -37,8 +37,8 @@
             "id": "sdsdsddsd"
           }
         },
-        "product_style_selector": {
-          "type": "product_style_selector",
+        "product_style_options": {
+          "type": "product_style_options",
           "settings": {
           }
         },
@@ -70,7 +70,6 @@
         "title",
         "price",
         "variant_picker",
-        "product_style_selector",
         "orp",
         "ws_custom_info",
         "quantity_selector",
