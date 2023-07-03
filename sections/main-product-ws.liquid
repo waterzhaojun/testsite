@@ -577,7 +577,7 @@
           stylePresentation.classList.add("presentation-" + tmp[0]);
         }
       }
-      let radioInputs = document.querySelectorAll('input[type=radio][name="style"]');
+      let radioInputs = document.querySelectorAll('input[type=radio][name="properties[style]"]');
       radioInputs.forEach(radio => radio.addEventListener('change', ()=>setStyleMedia(radio.value)));
 
       // Set default style
