@@ -18,7 +18,7 @@
     <input
       type="radio"
       id="style-selector_{{ sty.sku | handleize }}"
-      name="style"
+      name="properties[style]"
       value="{{ sty.sku }}"
       form="{{ product_form_id }}"
       {% if forloop.first %}
