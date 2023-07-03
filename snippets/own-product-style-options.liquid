@@ -12,8 +12,8 @@
   {% render 'product-style-selector', product: product %}
 {% endcomment %}
 
-<legend class="form__label">Style</legend>
 <fieldset id="Product-style-fieldset" class="product-form__input">
+  <legend class="form__label">Style</legend>
   {% for sty in product.metafields.custom.substyle.value %}
     <input
       type="radio"
