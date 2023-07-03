@@ -18,7 +18,7 @@
     assign medias = sty.images.value | concat: medias
   endfor
 
-  if section.settings.hide_variants and variant_images.size == product.media.size
+  if section.settings.hide_variants and variant_images.size == medias.size
     assign single_media_visible = true
   endif
 
