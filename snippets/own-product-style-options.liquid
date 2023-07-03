@@ -12,7 +12,7 @@
   {% render 'product-style-selector', product: product %}
 {% endcomment %}
 
-<div class="form__label">Style</div>
+<legend class="form__label">Style</legend>
 <fieldset id="Product-style-fieldset" class="product-form__input">
   {% for sty in product.metafields.custom.substyle.value %}
     <input
