@@ -1,0 +1,33 @@
+{% comment %}
+  Added by Jun
+  I design this snippet by mimic variation selector.
+  Can't use noscript wrap, otherwise the buttons disappeared.
+
+  Renders a product style options selector. It is based on metafield substyle.
+
+  Accepts:
+  - product: {Object} Product liquid object
+
+  Usage:
+  {% render 'product-style-selector', product: product %}
+{% endcomment %}
+
+<div>
+  <label class="form__label" for="product-style-{{ section.id }}">Style</label>
+  <div class="select">
+    <select
+      name="product-style"
+      id="product-style-{{ section.id }}"
+      class="select__select"
+      form="{{ product_form_id }}"
+    >
+      {% for sty in product.metafields.custom.substyle.value %}
+        <option
+          value="{{ sty.sku }}"
+        >
+          {{ sty.label }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
