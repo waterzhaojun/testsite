@@ -11,19 +11,18 @@
   Usage:
   {% render 'product-style-selector', product: product %}
 {% endcomment %}
-<noscript>
-  <legend class="form__label">Style</legend>
-  <fieldset id="Product-style-fieldset" class="product-form__input">
-    {% for sty in product.metafields.custom.substyle.value %}
-      <input
-        type="radio"
-        id="style-selector_{{ sty.sku | handleize }}"
-        name="style"
-        value="{{ sty.sku }}"
-      >
-      <label for="style-selector_{{ sty.sku | handleize }}">
-        {{ sty.label }}
-      </label>
-    {% endfor %}
-  </fieldset>
-</noscript>
+
+<legend class="form__label">Style</legend>
+<fieldset id="Product-style-fieldset" class="product-form__input">
+  {% for sty in product.metafields.custom.substyle.value %}
+    <input
+      type="radio"
+      id="style-selector_{{ sty.sku | handleize }}"
+      name="style"
+      value="{{ sty.sku }}"
+    >
+    <label for="style-selector_{{ sty.sku | handleize }}">
+      {{ sty.label }}
+    </label>
+  {% endfor %}
+</fieldset>
