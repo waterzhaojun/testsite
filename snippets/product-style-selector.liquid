@@ -14,4 +14,12 @@
 
 <div>
   <label class="form__label" for="product-style-{{ section.id }}">Style</label>
+  <div class="select">
+    <select
+      name="product-style"
+      id="product-style-{{ section.id }}"
+      class="select__select"
+      form="{{ product_form_id }}"
+    ></select>
+  </div>
 </div>
