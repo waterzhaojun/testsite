@@ -559,7 +559,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       const styles = {{ product.metafields.custom.substyle.value }};
       for (var i=0;i<styles.length;i++){
-        console.log(styles[i].sku);
+        var a = styles[i];
+        console.log({{ a.sku }});
       }
 
         //   styles.forEach((sty) => {
