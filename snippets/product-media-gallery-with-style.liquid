@@ -12,6 +12,19 @@
 {% endcomment %}
 
 {%- liquid
+  assign styles = product.metafields.custom.substyle.value
+  assign styleids = ''
+  assign medias = product.media
+  for sty in styles
+    assign ws_style_ids = ws_style_ids | append: sty.sku
+    for st in sty.images.value
+      assign ws_style_ids = ws_style_ids | append: '&'
+      assign ws_style_ids = ws_style_ids | append: st.id
+    endfor
+    assign ws_style_ids = ws_style_ids | append: '#'
+    assign medias = sty.images.value | concat: medias
+  endfor
+
   if section.settings.hide_variants and variant_images.size == product.media.size
     assign single_media_visible = true
   endif
