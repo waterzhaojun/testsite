@@ -1,0 +1,28 @@
+{% comment %}
+  Added by Jun
+  Renders a product style options selector. It is based on metafield substyle.
+
+  Accepts:
+  - product: {Object} Product liquid object
+
+  Usage:
+  {% render 'product-style-selector', product: product %}
+{% endcomment %}
+
+<div class="form__label">Style</div>
+<fieldset id="ProductOption-{{custom_product_option_title | handleize }}" class="product-form__input">
+  {% for sty in product.metafields.custom.substyle.value %}
+    <input
+      type="radio"
+      id="style-selector_{{ sty.sku | handleize }}"
+      name="style-selector"
+      value="{{ sty.sku }}"
+      {% if forloop.first %}
+        checked
+      {% endif %}
+    >
+    <label for="{{ sty.sku }}">
+      {{ sty.label }}
+    </label>
+  {% endfor %}
+</fieldset>
