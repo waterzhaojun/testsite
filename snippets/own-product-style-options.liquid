@@ -20,6 +20,9 @@
       id="style-selector_{{ sty.sku | handleize }}"
       name="style"
       value="{{ sty.sku }}"
+      {% if forloop.first %}
+        checked
+      {% endif %}
     >
     <label for="style-selector_{{ sty.sku | handleize }}">
       {{ sty.label }}
