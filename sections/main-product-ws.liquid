@@ -554,7 +554,15 @@
         hiddenInput.value = event.currentTarget.value;
       });
 
-    const styles = {{ product.metafields.custom.substyle.value}};
+      const styles = {{ product.metafields.custom.substyle.value}};
+      styles.forEach((sty) => {
+        sty.images.value.forEach((img) => {
+          var styimg = document.querySelector('li[data-target$="' + img.id + '"]');
+          console.log(styimg);
+        })
+        
+        
+      });
       
     });
   </script>
