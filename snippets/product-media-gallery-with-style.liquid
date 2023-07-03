@@ -13,15 +13,8 @@
 
 {%- liquid
   assign styles = product.metafields.custom.substyle.value
-  assign styleids = ''
   assign medias = product.media
   for sty in styles
-    assign styleids = styleids | append: sty.sku
-    for st in sty.images.value
-      assign styleids = styleids | append: '&'
-      assign styleids = styleids | append: st.id
-    endfor
-    assign styleids = styleids | append: '#'
     assign medias = sty.images.value | concat: medias
   endfor
 
