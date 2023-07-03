@@ -16,12 +16,12 @@
   assign styleids = ''
   assign medias = product.media
   for sty in styles
-    assign ws_style_ids = ws_style_ids | append: sty.sku
+    assign styleids = styleids | append: sty.sku
     for st in sty.images.value
-      assign ws_style_ids = ws_style_ids | append: '&'
-      assign ws_style_ids = ws_style_ids | append: st.id
+      assign styleids = styleids | append: '&'
+      assign styleids = styleids | append: st.id
     endfor
-    assign ws_style_ids = ws_style_ids | append: '#'
+    assign styleids = styleids | append: '#'
     assign medias = sty.images.value | concat: medias
   endfor
 
