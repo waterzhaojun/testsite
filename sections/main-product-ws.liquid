@@ -555,6 +555,7 @@
       });
 
       const styles = {{ product.metafields.custom.substyle.value}};
+      console.log(styles);
       styles.forEach((sty) => {
         sty.media.value.forEach((img) => {
           var styimg = document.querySelector('li[data-target$="__main-' + img.id + '"]');
