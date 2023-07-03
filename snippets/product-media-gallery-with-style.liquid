@@ -49,15 +49,6 @@
   endif
 -%}
 
-{% for s in styles %}
-  {{ s.sku }}
-  {% assign simgs = s.media.value %}
-  {{ simgs }}
-  {% for sig in simgs %}
-    {{ '===========' }}
-    {{ sig }}
-  {% endfor %}
-{% endfor %}
 <media-gallery
   id="MediaGallery-{{ section.id }}{{ id_append }}"
   role="region"
