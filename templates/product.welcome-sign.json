@@ -70,6 +70,7 @@
         "title",
         "price",
         "variant_picker",
+        "product_style_options",
         "orp",
         "ws_custom_info",
         "quantity_selector",
