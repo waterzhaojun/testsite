@@ -289,7 +289,7 @@
                 {% for sty in product.metafields.custom.substyle.value %}
                   <input
                     type="radio"
-                    id="{{ sty.sku | handleize }}"
+                    id="style_option_{{ sty.sku | handleize }}"
                     name="ws-style-selector"
                     value="{{ sty.sku }}"
                     {% if forloop.first %}
