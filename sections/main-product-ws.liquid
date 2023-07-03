@@ -283,8 +283,8 @@
                   {%- endif -%}
                 </div>
               </div>
-            {% when 'product_style_selector' %}
-              {% render 'product-style-selector' %}
+            {% when 'product_style_options' %}
+              {% render 'own-product-style-options' %}
             {% when 'orp' %}
               {% for p in product.metafields.custom.orp.value %}
                 {% assign form_p_id = 'orp_form_' | append: p.id %}
@@ -654,8 +654,8 @@
       "name": "WS custom info"
     },
     {
-      "type": "product_style_selector",
-      "name": "Product sytle selector"
+      "type": "product_style_options",
+      "name": "Product sytle options"
     },
     {
       "type": "orp",
