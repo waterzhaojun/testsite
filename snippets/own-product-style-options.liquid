@@ -21,7 +21,7 @@
         name="style"
         value="{{ sty.sku }}"
       >
-      <label for="{{ sty.sku }}">
+      <label for="style-selector_{{ sty.sku | handleize }}">
         {{ sty.label }}
       </label>
     {% endfor %}
