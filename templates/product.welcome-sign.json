@@ -37,17 +37,9 @@
             "id": "sdsdsddsd"
           }
         },
-        "product_style_option": {
-          "type": "product_style_option",
+        "product_style_selector": {
+          "type": "product_style_selector",
           "settings": {
-            "title": "",
-            "values": ""
-          }
-        },
-        "assistant": {
-          "type": "assistant",
-          "settings": {
-            "id": "assistant"
           }
         },
         "quantity_selector": {
@@ -78,9 +70,8 @@
         "title",
         "price",
         "variant_picker",
-        "product_style_option",
+        "product_style_selector",
         "orp",
-        "assistant",
         "ws_custom_info",
         "quantity_selector",
         "buy_buttons",
@@ -89,8 +80,8 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "gallery_layout": "thumbnail",
         "media_size": "small",
+        "gallery_layout": "thumbnail",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
