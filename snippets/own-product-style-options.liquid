@@ -12,15 +12,17 @@
   {% render 'product-style-selector', product: product %}
 {% endcomment %}
 
-{% for sty in product.metafields.custom.substyle.value %}
-  <input
-    type="radio"
-    id="{{ section.id }}-style-{{ forloop.index0 }}"
-    name="product-style"
-    value="{{ sty.sku }}"
-    form="{{ product_form_id }}"
-  >
-  <label for="{{ section.id }}-style-{{ forloop.index0 }}">
-    {{ sty.label }}
-  </label>
-{% endfor %}
+<div class="form__label">Style</div>
+<fieldset id="Product-style-fieldset" class="product-form__input">
+  {% for sty in product.metafields.custom.substyle.value %}
+    <input
+      type="radio"
+      id="style-selector_{{ sty.sku | handleize }}"
+      name="style-selector"
+      value="{{ sty.sku }}"
+    >
+    <label for="{{ sty.sku }}">
+      {{ sty.label }}
+    </label>
+  {% endfor %}
+</fieldset>
