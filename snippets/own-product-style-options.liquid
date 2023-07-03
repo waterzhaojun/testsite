@@ -15,12 +15,12 @@
 {% for sty in product.metafields.custom.substyle.value %}
   <input
     type="radio"
-    id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    id="{{ section.id }}-style-{{ forloop.index0 }}"
     name="{{ option.name }}"
     value="{{ sty.sku }}"
     form="{{ product_form_id }}"
   >
-  <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+  <label for="{{ section.id }}-style-{{ forloop.index0 }}">
     {{ sty.label }}
   </label>
 {% endfor %}
