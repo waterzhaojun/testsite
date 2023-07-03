@@ -20,6 +20,14 @@
       id="product-style-{{ section.id }}"
       class="select__select"
       form="{{ product_form_id }}"
-    ></select>
+    >
+      {% for sty in product.metafields.custom.substyle.value %}
+        <option
+          value="{{ sty.sku }}"
+        >
+          {{ sty.label }}
+        </option>
+      {% endfor %}
+    </select>
   </div>
 </div>
