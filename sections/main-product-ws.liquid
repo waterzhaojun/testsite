@@ -557,19 +557,19 @@
   </script>
   {%- liquid
     assign styles = product.metafields.custom.substyle.value
-    assign ws_style_ids = ''
+    assign style_ids = ''
     for sty in styles
-      assign ws_style_ids = ws_style_ids | append: sty.sku
+      assign style_ids = style_ids | append: sty.sku
       for st in sty.images.value
-        assign ws_style_ids = ws_style_ids | append: '&'
-        assign ws_style_ids = ws_style_ids | append: st.id
+        assign style_ids = style_ids | append: '&'
+        assign style_ids = style_ids | append: st.id
       endfor
-      assign ws_style_ids = ws_style_ids | append: '#'
+      assign style_ids = style_ids | append: '#'
     endfor
   -%}
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const style_ids = '{{ ws_style_ids }}'.split('#');
+      const style_ids = '{{ style_ids }}'.split('#');
       console.log(style_ids)
       for (var i=0;i<style_ids.length-1;i++){
         var tmp = style_ids[i].split('&');
