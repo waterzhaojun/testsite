@@ -52,7 +52,7 @@
         {%- if card_product.featured_media -%}
           {% assign showmedia = card_product.featured_media %}
         {% else %}
-          {% assign showmedia = card_product.media[1] %}
+          {% assign showmedia = card_product.media[0] %}
         {% endif %}
 
         <div class="card__media">
