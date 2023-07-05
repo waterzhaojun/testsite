@@ -57,7 +57,7 @@
         {{ showmedia }}
         <div class="card__media">
           <div class="media media--transparent media--hover-effect">
-            {{ showmedia | image_url: width: 533 }}
+            {{ showmedia | image_url: width: 533 | image_tag }}
             {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
             <img
               srcset="
