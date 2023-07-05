@@ -54,7 +54,7 @@
         {% else %}
           {% assign showmedia = card_product.media[1] %}
         {% endif %}
-        {{ showmedia | image_url: width: 533 | image_tag }}
+        {{ showmedia | image_url: width: 533 }}
         <div class="card__media">
           <div class="media media--transparent media--hover-effect">
             {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
