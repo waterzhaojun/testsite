@@ -49,12 +49,12 @@
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
-        hererererere
         {%- if card_product.featured_media -%}
           {% assign showmedia = card_product.featured_media %}}
         {% else %}
           {% assign showmedia = card_product.media[1] %}
         {% endif %}
+        {{ showmedia }}
         <div class="card__media">
           <div class="media media--transparent media--hover-effect">
             {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
